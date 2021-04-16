@@ -1,0 +1,18 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+
+schema:Person
+  a rdfs:Class, sh:NodeShape ;
+  sh:property
+    [
+      sh:path schema:name ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ;
+    ],
+    [
+      sh:path schema:age ;
+      sh:minCount 1 ;
+      sh:minInclusive 18 ;
+    ] ;
+.

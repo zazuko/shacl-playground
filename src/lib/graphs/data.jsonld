@@ -1,0 +1,12 @@
+{
+  "@context": {
+    "@vocab": "http://schema.org/"
+  },
+  "@id": "John-Doe",
+  "@type": "Person",
+  "name": [
+    "John",
+    "Johnny"
+  ],
+  "age": 18
+}
