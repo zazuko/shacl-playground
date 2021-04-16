@@ -1,0 +1,35 @@
+name: Netlify
+
+on: push
+
+jobs:
+  Deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2.1.2
+        with:
+          node-version: 14
+
+      - run: yarn install --frozen-lockfile
+
+      - uses: nelonoel/branch-name@v1.0.1
+
+      - name: Publish preview
+        uses: jsmrcaga/action-netlify-deploy@v1.6.0
+        with:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          NETLIFY_DEPLOY_MESSAGE: Preview ${{ env.BRANCH_NAME }}
+          build_directory: dist
+          deploy_alias: ${{ env.BRANCH_NAME }}
+          NETLIFY_DEPLOY_TO_PROD: false
+          build_command: yarn build
+
+      - name: Status check
+        uses: Sibz/github-status-action@v1.1.1
+        with:
+          authToken: ${{ secrets.GITHUB_TOKEN }}
+          context: Netlify Site
+          state: success
+          target_url: https://${{ env.BRANCH_NAME }}--shacl-playground.netlify.app
