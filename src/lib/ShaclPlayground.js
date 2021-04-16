@@ -1,11 +1,9 @@
 import { css, html, LitElement } from "lit-element";
 import { connect } from "@captaincodeman/rdx";
 import "@vaadin/vaadin-app-layout/vaadin-app-layout.js";
-import "@vaadin/vaadin-app-layout/vaadin-drawer-toggle.js";
 import "@vaadin/vaadin-tabs/vaadin-tabs.js";
 import "@vaadin/vaadin-tabs/vaadin-tab.js";
 import "@polymer/iron-pages/iron-pages.js";
-import "@polymer/iron-icon/iron-icon.js";
 import { store } from "./store/index.js";
 import { version } from "../../package.json";
 
@@ -16,6 +14,10 @@ export class ShaclPlayground extends connect(store, LitElement) {
         height: 100vh;
         display: flex;
         flex-flow: column;
+      }
+
+      vaadin-app-layout::part(drawer) {
+        z-index: 10;
       }
 
       vaadin-tabs {
@@ -59,6 +61,9 @@ export class ShaclPlayground extends connect(store, LitElement) {
 
   connectedCallback() {
     super.connectedCallback();
+    import("@vaadin/vaadin-app-layout/vaadin-drawer-toggle.js");
+    import("@vaadin/vaadin-button/vaadin-button.js");
+    import("@polymer/iron-icon/iron-icon.js");
     import("@vaadin/vaadin-icons/vaadin-icons.js");
     import("./components/graph-editor.js");
   }
@@ -87,14 +92,14 @@ export class ShaclPlayground extends connect(store, LitElement) {
             <iron-icon icon="${this.reportIcon}"></iron-icon>
             <span>Validation Report</span>
           </vaadin-tab>
-          <vaadin-button slot="navbar" @click="${this.__reset}"
-            >Reset</vaadin-button
-          >
           <vaadin-tab theme="icon-on-top">
             <iron-icon icon="vaadin:question-circle-o"></iron-icon>
             <span>About</span>
           </vaadin-tab>
         </vaadin-tabs>
+        <vaadin-button slot="navbar" @click="${this.__reset}">
+          Reset
+        </vaadin-button>
 
         <iron-pages selected="${this.page}" slot="drawer">
           <editor-drawer model="shapesGraph"></editor-drawer>

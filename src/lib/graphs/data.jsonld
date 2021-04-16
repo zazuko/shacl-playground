@@ -1,5 +1,6 @@
 {
   "@context": {
+    "@base": "https://example.com/",
     "@vocab": "http://schema.org/"
   },
   "@id": "John-Doe",

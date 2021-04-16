@@ -26,6 +26,7 @@
     "@tpluscode/rdf-string": "^0.2.23",
     "@vaadin/vaadin-app-layout": "^20.0.0-alpha4",
     "@vaadin/vaadin-form-layout": "^20.0.0-alpha4",
+    "@vaadin/vaadin-button": "^20.0.0-alpha4",
     "@vaadin/vaadin-icons": "^20.0.0-alpha4",
     "@vaadin/vaadin-item": "^20.0.0-alpha4",
     "@vaadin/vaadin-list-box": "^20.0.0-alpha4",
