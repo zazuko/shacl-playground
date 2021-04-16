@@ -38,6 +38,8 @@ class EditorDrawer extends connect(store, LitElement) {
             </vaadin-list-box>
           </template>
         </vaadin-select>
+
+        <prefix-list .selected="${this.prefixes}"></prefix-list>
       </vaadin-form-layout>
     `;
   }
