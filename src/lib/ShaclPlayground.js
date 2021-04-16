@@ -87,6 +87,9 @@ export class ShaclPlayground extends connect(store, LitElement) {
             <iron-icon icon="${this.reportIcon}"></iron-icon>
             <span>Validation Report</span>
           </vaadin-tab>
+          <vaadin-button slot="navbar" @click="${this.__reset}"
+            >Reset</vaadin-button
+          >
           <vaadin-tab theme="icon-on-top">
             <iron-icon icon="vaadin:question-circle-o"></iron-icon>
             <span>About</span>
@@ -138,6 +141,11 @@ export class ShaclPlayground extends connect(store, LitElement) {
 
   __pageSelected(e) {
     store.dispatch.playground.switchPage(e.detail.value);
+  }
+
+  __reset() {
+    localStorage.removeItem(document.location.hostname);
+    document.location.reload();
   }
 
   __loadPage(e) {
