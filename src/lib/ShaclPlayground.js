@@ -5,7 +5,6 @@ import "@vaadin/vaadin-tabs/vaadin-tabs.js";
 import "@vaadin/vaadin-tabs/vaadin-tab.js";
 import "@polymer/iron-pages/iron-pages.js";
 import { store } from "./store/index.js";
-import { version } from "../../package.json";
 
 export class ShaclPlayground extends connect(store, LitElement) {
   static get styles() {
@@ -66,6 +65,7 @@ export class ShaclPlayground extends connect(store, LitElement) {
     import("@polymer/iron-icon/iron-icon.js");
     import("@vaadin/vaadin-icons/vaadin-icons.js");
     import("./components/graph-editor.js");
+    import("zero-md");
   }
 
   render() {
@@ -118,11 +118,9 @@ export class ShaclPlayground extends connect(store, LitElement) {
             <validation-report></validation-report>
           </section>
           <section>
-            <h1>SHACL Playgound</h1>
+            <zero-md src="/CHANGELOG.md"> </zero-md>
 
-            <p>Ver. ${version}</p>
-
-            Copyright © 2021 Zazuko GmbH
+            <p>Copyright © 2021 Zazuko GmbH</p>
           </section>
         </iron-pages>
       </vaadin-app-layout>
