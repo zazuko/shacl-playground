@@ -1,0 +1,9 @@
+{
+  "extends": [
+    "@open-wc/eslint-config",
+    "eslint-config-prettier"
+  ],
+  "rules": {
+    "class-methods-use-this": "warn"
+  }
+}

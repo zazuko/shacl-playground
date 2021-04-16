@@ -41,11 +41,11 @@
     "@babel/preset-env": "^7.11.0",
     "@changesets/cli": "^2.9.2",
     "@open-wc/building-webpack": "^2.13.46",
-    "@open-wc/eslint-config": "^2.0.0",
+    "@open-wc/eslint-config": "^4.2.0",
     "deepmerge": "^3.2.0",
     "es-dev-commonjs-transformer": "^0.2.0",
-    "eslint": "^6.1.0",
-    "eslint-config-prettier": "^6.11.0",
+    "eslint": "^7.24.0",
+    "eslint-config-prettier": "^8.2.0",
     "husky": "^6.0.0",
     "lint-staged": "^10.0.0",
     "lit-analyzer": "^1.2.1",
@@ -59,12 +59,6 @@
     "*.js": [
       "eslint --quiet --fix",
       "prettier --write"
-    ]
-  },
-  "eslintConfig": {
-    "extends": [
-      "@open-wc/eslint-config",
-      "eslint-config-prettier"
     ]
   },
   "repository": {
