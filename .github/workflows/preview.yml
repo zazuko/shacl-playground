@@ -12,6 +12,7 @@ jobs:
           node-version: 14
 
       - run: yarn install --frozen-lockfile
+      - run: yarn changeset version
 
       - uses: nelonoel/branch-name@v1.0.1
 
