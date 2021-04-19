@@ -41,6 +41,10 @@ export class ShaclPlayground extends connect(store, LitElement) {
       section {
         height: 90vh;
       }
+
+      vaadin-button[slot="navbar"] {
+        margin-right: 10px;
+      }
     `;
   }
 
@@ -48,7 +52,7 @@ export class ShaclPlayground extends connect(store, LitElement) {
     return {
       page: { type: Number },
       reportClass: { type: String },
-      reportIcon: { typ: String }
+      reportIcon: { type: String }
     };
   }
 
@@ -81,7 +85,7 @@ export class ShaclPlayground extends connect(store, LitElement) {
           @selected-changed="${this.__pageSelected}"
         >
           <vaadin-tab theme="icon-on-top">
-            <iron-icon icon="vaadin:bullets"></iron-icon>
+            <iron-icon icon="vaadin:cluster"></iron-icon>
             <span>Shapes Graph</span>
           </vaadin-tab>
           <vaadin-tab theme="icon-on-top">
@@ -97,8 +101,22 @@ export class ShaclPlayground extends connect(store, LitElement) {
             <span>About</span>
           </vaadin-tab>
         </vaadin-tabs>
-        <vaadin-button slot="navbar" @click="${this.__reset}">
-          Reset
+        <vaadin-button
+          slot="navbar"
+          title="Open in Shaperone playground"
+          @click="${this.__openPlayground}"
+        >
+          <iron-icon icon="vaadin:form"></iron-icon>
+        </vaadin-button>
+        <vaadin-button slot="navbar" title="Reset" @click="${this.__reset}">
+          <iron-icon icon="vaadin:trash"></iron-icon>
+        </vaadin-button>
+        <vaadin-button
+          slot="navbar"
+          title="Open on GitHub"
+          @click="${this.__openCode}"
+        >
+          <iron-icon icon="vaadin:code"></iron-icon>
         </vaadin-button>
 
         <iron-pages selected="${this.page}" slot="drawer">
@@ -138,7 +156,8 @@ export class ShaclPlayground extends connect(store, LitElement) {
     return {
       reportClass,
       reportIcon: state.validation.conforms ? "vaadin:bug-o" : "vaadin:bug",
-      page: state.playground.page
+      page: state.playground.page,
+      shaperoneLink: state.playground.shaperone
     };
   }
 
@@ -155,5 +174,13 @@ export class ShaclPlayground extends connect(store, LitElement) {
     if (e.detail.item.id === "validation-report") {
       import("./validation-report.js");
     }
+  }
+
+  __openPlayground() {
+    window.open(this.shaperoneLink, "shaperone");
+  }
+
+  __openCode() {
+    window.open("https://github.com/zazuko/shacl-playground", "_blank");
   }
 }
