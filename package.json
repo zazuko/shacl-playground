@@ -31,6 +31,7 @@
     "@vaadin/vaadin-icons": "^20.0.0-alpha4",
     "@vaadin/vaadin-item": "^20.0.0-alpha4",
     "@vaadin/vaadin-list-box": "^20.0.0-alpha4",
+    "@vaadin/vaadin-ordered-layout": "^20.0.0-alpha4",
     "@vaadin/vaadin-select": "^20.0.0-alpha4",
     "@vaadin/vaadin-tabs": "^20.0.0-alpha4",
     "@zazuko/rdf-vocabularies": "^2021.3.31",

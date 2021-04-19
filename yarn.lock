@@ -2139,6 +2139,17 @@
     "@polymer/polymer" "^3.0.0"
     "@vaadin/vaadin-themable-mixin" "^20.0.0-alpha4"
 
+"@vaadin/vaadin-ordered-layout@^20.0.0-alpha4":
+  version "20.0.0-alpha4"
+  resolved "https://registry.yarnpkg.com/@vaadin/vaadin-ordered-layout/-/vaadin-ordered-layout-20.0.0-alpha4.tgz#1c2a30be8cda587e95db4f1d899018d91a962086"
+  integrity sha512-LJ0382dMoiwHNIglfh+fbenLOtgyeddPwrlAx5ecBC+raFLj1K9TeV/MUPtfAT5UwS7RAQMOdr+7cwQ7wW4Qiw==
+  dependencies:
+    "@polymer/polymer" "^3.0.0"
+    "@vaadin/vaadin-element-mixin" "^20.0.0-alpha4"
+    "@vaadin/vaadin-lumo-styles" "^20.0.0-alpha4"
+    "@vaadin/vaadin-material-styles" "^20.0.0-alpha4"
+    "@vaadin/vaadin-themable-mixin" "^20.0.0-alpha4"
+
 "@vaadin/vaadin-overlay@^20.0.0-alpha4":
   version "20.0.0-alpha4"
   resolved "https://registry.yarnpkg.com/@vaadin/vaadin-overlay/-/vaadin-overlay-20.0.0-alpha4.tgz#9e8ed25a6a6b202d7d6e8ac5a363853c292f20be"

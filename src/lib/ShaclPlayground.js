@@ -5,6 +5,7 @@ import "@vaadin/vaadin-app-layout/vaadin-app-layout.js";
 import "@vaadin/vaadin-tabs/vaadin-tabs.js";
 import "@vaadin/vaadin-tabs/vaadin-tab.js";
 import "@polymer/iron-pages/iron-pages.js";
+import "@vaadin/vaadin-ordered-layout/vaadin-vertical-layout.js";
 import { store } from "./store/index.js";
 
 export class ShaclPlayground extends connect(store, LitElement) {
@@ -45,6 +46,10 @@ export class ShaclPlayground extends connect(store, LitElement) {
 
       vaadin-button[slot="navbar"] {
         margin-right: 10px;
+      }
+
+      #about-drawer > * {
+        width: 100%;
       }
     `;
   }
@@ -122,21 +127,21 @@ export class ShaclPlayground extends connect(store, LitElement) {
         >
           <iron-icon icon="vaadin:form"></iron-icon>
         </vaadin-button>
-        <vaadin-button slot="navbar" title="Reset" @click="${this.__reset}">
-          <iron-icon icon="vaadin:trash"></iron-icon>
-        </vaadin-button>
-        <vaadin-button
-          slot="navbar"
-          title="Open on GitHub"
-          @click="${this.__openCode}"
-        >
-          <iron-icon icon="vaadin:code"></iron-icon>
-        </vaadin-button>
 
         <iron-pages selected="${this.page}" slot="drawer">
           <editor-drawer model="shapesGraph"></editor-drawer>
           <editor-drawer model="dataGraph"></editor-drawer>
           <validation-drawer></validation-drawer>
+          <vaadin-vertical-layout id="about-drawer">
+            <vaadin-button @click="${this.__reset}">
+              <iron-icon icon="vaadin:trash" slot="prefix"></iron-icon>
+              Reset
+            </vaadin-button>
+            <vaadin-button @click="${this.__openCode}">
+              <iron-icon icon="vaadin:code" slot="prefix"></iron-icon>
+              GitHub
+            </vaadin-button>
+          </vaadin-vertical-layout>
         </iron-pages>
 
         <iron-pages selected="${this.page}" @iron-select="${this.__loadPage}">
