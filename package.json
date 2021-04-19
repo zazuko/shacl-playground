@@ -26,6 +26,7 @@
     "@tpluscode/rdf-string": "^0.2.23",
     "@vaadin/vaadin-app-layout": "^20.0.0-alpha4",
     "@vaadin/vaadin-button": "^20.0.0-alpha4",
+    "@vaadin/vaadin-dialog": "^20.0.0-alpha4",
     "@vaadin/vaadin-form-layout": "^20.0.0-alpha4",
     "@vaadin/vaadin-icons": "^20.0.0-alpha4",
     "@vaadin/vaadin-item": "^20.0.0-alpha4",
@@ -35,6 +36,7 @@
     "@zazuko/rdf-vocabularies": "^2021.3.31",
     "clownface": "^1.2.0",
     "lit-element": "^2.4.0",
+    "lit-html": "^1.3.0",
     "rdf-validate-shacl": "^0.3.0",
     "zero-md": "^2.1.1"
   },

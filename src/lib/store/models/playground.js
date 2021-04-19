@@ -3,7 +3,8 @@ import { createModel } from "@captaincodeman/rdx";
 export const playground = createModel({
   state: {
     page: 3,
-    shaperone: new URL("https://forms.hypermedia.app/playground/").toString()
+    shaperone: new URL("https://forms.hypermedia.app/playground/").toString(),
+    sharingLink: new URL(window.location.href).toString()
   },
   reducers: {
     switchPage(state, page) {
@@ -16,6 +17,15 @@ export const playground = createModel({
       return {
         ...state,
         shaperone: url.toString()
+      };
+    },
+    setSharingParam(state, { key, value }) {
+      const url = new URL(state.sharingLink);
+      url.searchParams.set(key, value);
+
+      return {
+        ...state,
+        sharingLink: url.toString()
       };
     }
   },
@@ -34,6 +44,15 @@ export const playground = createModel({
           key: "resourceFormat",
           value: format
         });
+
+        dispatch.playground.setSharingParam({
+          key: "dataGraph",
+          value: serialized
+        });
+        dispatch.playground.setSharingParam({
+          key: "dataGraphFormat",
+          value: format
+        });
       },
       "shapesGraph/parsed": function({ serialized }) {
         const { format } = store.getState().shapesGraph;
@@ -46,6 +65,41 @@ export const playground = createModel({
           key: "shapesFormat",
           value: format
         });
+
+        dispatch.playground.setSharingParam({
+          key: "shapesGraph",
+          value: serialized
+        });
+        dispatch.playground.setSharingParam({
+          key: "shapesGraphFormat",
+          value: format
+        });
+      },
+      restoreState() {
+        const url = new URL(document.location.toString());
+
+        const shapesGraph = url.searchParams.get("shapesGraph");
+        const shapesGraphFormat = url.searchParams.get("shapesGraphFormat");
+        const dataGraph = url.searchParams.get("dataGraph");
+        const dataGraphFormat = url.searchParams.get("dataGraphFormat");
+
+        if (shapesGraph) {
+          dispatch.shapesGraph.setGraph(shapesGraph);
+        }
+        if (shapesGraphFormat) {
+          dispatch.shapesGraph.changeFormat(shapesGraphFormat);
+        }
+        if (dataGraph) {
+          dispatch.dataGraph.setGraph(dataGraph);
+        }
+        if (dataGraphFormat) {
+          dispatch.dataGraph.changeFormat(dataGraphFormat);
+        }
+
+        [...url.searchParams.keys()].forEach(key =>
+          url.searchParams.delete(key)
+        );
+        window.history.replaceState(null, "", url.toString());
       }
     };
   }

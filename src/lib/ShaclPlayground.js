@@ -1,4 +1,5 @@
 import { css, html, LitElement } from "lit-element";
+import { render } from "lit-html";
 import { connect } from "@captaincodeman/rdx";
 import "@vaadin/vaadin-app-layout/vaadin-app-layout.js";
 import "@vaadin/vaadin-tabs/vaadin-tabs.js";
@@ -52,7 +53,10 @@ export class ShaclPlayground extends connect(store, LitElement) {
     return {
       page: { type: Number },
       reportClass: { type: String },
-      reportIcon: { type: String }
+      reportIcon: { type: String },
+      sharingLink: { type: String },
+      sharingLinkShortened: { type: Boolean },
+      sharingDialogOpen: { type: Boolean }
     };
   }
 
@@ -67,9 +71,12 @@ export class ShaclPlayground extends connect(store, LitElement) {
     import("@vaadin/vaadin-app-layout/vaadin-drawer-toggle.js");
     import("@vaadin/vaadin-button/vaadin-button.js");
     import("@polymer/iron-icon/iron-icon.js");
+    import("@vaadin/vaadin-dialog/vaadin-dialog.js");
     import("@vaadin/vaadin-icons/vaadin-icons.js");
     import("./components/graph-editor.js");
     import("zero-md");
+
+    store.dispatch.playground.restoreState();
   }
 
   render() {
@@ -101,6 +108,13 @@ export class ShaclPlayground extends connect(store, LitElement) {
             <span>About</span>
           </vaadin-tab>
         </vaadin-tabs>
+        <vaadin-button
+          slot="navbar"
+          title="Share"
+          @click="${this.__openSharingDialog}"
+        >
+          <iron-icon icon="vaadin:share"></iron-icon>
+        </vaadin-button>
         <vaadin-button
           slot="navbar"
           title="Open in Shaperone playground"
@@ -142,7 +156,51 @@ export class ShaclPlayground extends connect(store, LitElement) {
           </section>
         </iron-pages>
       </vaadin-app-layout>
+
+      <vaadin-dialog
+        ?opened="${this.sharingDialogOpen}"
+        .renderer="${this.__renderSharingDialog(this)}"
+        @opened-changed="${e => {
+          this.sharingDialogOpen = e.detail.value;
+        }}"
+      >
+      </vaadin-dialog>
     `;
+  }
+
+  __renderSharingDialog(parent) {
+    /* eslint-disable lit/no-template-bind */
+    return root => {
+      let dialogContents;
+      if (!root.firstElementChild) {
+        dialogContents = document.createElement("div");
+        root.appendChild(dialogContents);
+      } else {
+        dialogContents = root.firstElementChild;
+      }
+
+      render(
+        html`
+          <vaadin-text-field
+            style="width:500px"
+            readonly
+            autoselect
+            label="Copy this URL to share playground"
+            .value="${parent.sharingLink}"
+          ></vaadin-text-field>
+          <br />
+          <vaadin-button
+            ?disabled="${parent.sharingLinkShortened}"
+            @click="${parent.__shortenSharingLink.bind(parent)}"
+          >
+            Shorten
+          </vaadin-button>
+        `,
+        dialogContents
+      );
+
+      dialogContents.querySelector("vaadin-text-field")?.focus();
+    };
   }
 
   mapState(state) {
@@ -157,7 +215,9 @@ export class ShaclPlayground extends connect(store, LitElement) {
       reportClass,
       reportIcon: state.validation.conforms ? "vaadin:bug-o" : "vaadin:bug",
       page: state.playground.page,
-      shaperoneLink: state.playground.shaperone
+      shaperoneLink: state.playground.shaperone,
+      sharingLink: state.playground.sharingLink,
+      sharingLinkShortened: false
     };
   }
 
@@ -182,5 +242,23 @@ export class ShaclPlayground extends connect(store, LitElement) {
 
   __openCode() {
     window.open("https://github.com/zazuko/shacl-playground", "_blank");
+  }
+
+  __openSharingDialog() {
+    this.sharingDialogOpen = true;
+  }
+
+  async __shortenSharingLink() {
+    if (this.sharingLinkShortened) {
+      return;
+    }
+
+    this.sharingLinkShortened = true;
+
+    const shortnenerUrl = new URL("https://s.zazuko.com/api/v1/shorten/");
+    shortnenerUrl.searchParams.set("url", this.sharingLink);
+    const response = await fetch(shortnenerUrl);
+
+    this.sharingLink = await response.text();
   }
 }

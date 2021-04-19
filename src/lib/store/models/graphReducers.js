@@ -10,6 +10,13 @@ export function parsed(state, { quads, serialized }) {
   };
 }
 
+export function setGraph(state, graph) {
+  return {
+    ...state,
+    graph
+  };
+}
+
 export function addPrefix(state, prefix) {
   return {
     ...state,

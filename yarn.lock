@@ -2046,6 +2046,19 @@
   resolved "https://registry.yarnpkg.com/@vaadin/vaadin-development-mode-detector/-/vaadin-development-mode-detector-2.0.4.tgz#f49c8009856bead92d248377c36b295b5aae78e5"
   integrity sha512-S+PaFrZpK8uBIOnIHxjntTrgumd5ztuCnZww96ydGKXgo9whXfZsbMwDuD/102a/IuPUMyF+dh/n3PbWzJ6igA==
 
+"@vaadin/vaadin-dialog@^20.0.0-alpha4":
+  version "20.0.0-alpha4"
+  resolved "https://registry.yarnpkg.com/@vaadin/vaadin-dialog/-/vaadin-dialog-20.0.0-alpha4.tgz#816bf9319bb28a54cbb1418cc638c46ba3a942fe"
+  integrity sha512-DDD3u/RtlbIWGXIzjOQYpwnS5J/ZSvEX9nPPcQNvTBr4JZgoQ4PmYiRAgpyEQFCyqgo0OhBx2UF4e8Lrzrfl6A==
+  dependencies:
+    "@polymer/iron-resizable-behavior" "^3.0.0"
+    "@polymer/polymer" "^3.0.0"
+    "@vaadin/vaadin-element-mixin" "^20.0.0-alpha4"
+    "@vaadin/vaadin-lumo-styles" "^20.0.0-alpha4"
+    "@vaadin/vaadin-material-styles" "^20.0.0-alpha4"
+    "@vaadin/vaadin-overlay" "^20.0.0-alpha4"
+    "@vaadin/vaadin-themable-mixin" "^20.0.0-alpha4"
+
 "@vaadin/vaadin-element-mixin@^20.0.0-alpha4":
   version "20.0.0-alpha4"
   resolved "https://registry.yarnpkg.com/@vaadin/vaadin-element-mixin/-/vaadin-element-mixin-20.0.0-alpha4.tgz#f5211bf3c3daf0961b7f2ce5fdc374777a0f472c"
