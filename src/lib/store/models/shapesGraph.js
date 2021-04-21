@@ -6,7 +6,7 @@ export const shapesGraph = createModel({
   state: {
     format: "text/turtle",
     graph: shapes,
-    prefixes: []
+    prefixes: ["sh", "schema"]
   },
   reducers: {
     ...graphReducers
