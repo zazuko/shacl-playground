@@ -1064,6 +1064,23 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@graphy/content.nq.read@^4.3.3":
+  version "4.3.3"
+  resolved "https://registry.yarnpkg.com/@graphy/content.nq.read/-/content.nq.read-4.3.3.tgz#c7cfa3e5d57c1d7e247e69057c44c118f262bcac"
+  integrity sha512-+mA/a5RzqlVwdTQzST5JNNiPR2mbWEFfDWvmf/fUaSGpb0Lj8NEaGxb+NwKlS0Q3fnx6lbglfyONfdLcRfZhOA==
+  dependencies:
+    "@graphy/core.data.factory" "^4.3.3"
+    "@graphy/core.iso.stream" "^4.3.3"
+
+"@graphy/content.trig.read@^4.3.3":
+  version "4.3.3"
+  resolved "https://registry.yarnpkg.com/@graphy/content.trig.read/-/content.trig.read-4.3.3.tgz#549bf1868dbe85191544f8b1f44b72f2e2be446e"
+  integrity sha512-yzxsbnG+4MAOiaqcd9wrjMBnAopiHmyCKCFVX0e+SMs37bT+rKwZFz93Gdgo1De5xxpNHTB7d3R5Z/CginfewQ==
+  dependencies:
+    "@graphy/core.data.factory" "^4.3.3"
+    "@graphy/core.iso.stream" "^4.3.3"
+    uri-js "^4.4.0"
+
 "@graphy/content.trig.scribe@^4.3.3":
   version "4.3.3"
   resolved "https://registry.yarnpkg.com/@graphy/content.trig.scribe/-/content.trig.scribe-4.3.3.tgz#193519c48677cbe0f321981271194e4f6fa5515c"
@@ -1483,11 +1500,13 @@
     lit-element "^2.2.1"
     throttle-debounce "^3.0.1"
 
-"@rdfjs-elements/formats-pretty@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@rdfjs-elements/formats-pretty/-/formats-pretty-0.1.1.tgz#49fe569da67a89095c30903d7525a11ca3ea02fc"
-  integrity sha512-+h7k4I74hUZ3qcX8kCHJsWFwxh4EI7Winh9LiUGhPSjKn/RqFL45BtrvCCEtN17cDwYTIyQrRt9nb4zwgcL6lg==
+"@rdfjs-elements/formats-pretty@^0.2.0", "@rdfjs-elements/formats-pretty@^0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@rdfjs-elements/formats-pretty/-/formats-pretty-0.2.1.tgz#3e9394a70f237f95585eacfca202fc652c145061"
+  integrity sha512-LOuIJN2M8EPxlXEptjBIOisa8mXmBex5HuBZqa7K/SYzlO3AWYroBrMckv4SgdBR24D6SJKAkdZuWqmCltq2oA==
   dependencies:
+    "@graphy/content.nq.read" "^4.3.3"
+    "@graphy/content.trig.read" "^4.3.3"
     "@graphy/content.trig.scribe" "^4.3.3"
     "@graphy/content.ttl.scribe" "^4.3.3"
     "@graphy/content.xml.scribe" "^4.3.3"
@@ -1495,14 +1514,14 @@
     "@rdf-esm/sink-map" "^0.5.4"
     "@rdfjs/serializer-jsonld-ext" "^2.0.0"
 
-"@rdfjs-elements/rdf-editor@^0.3.9":
-  version "0.3.9"
-  resolved "https://registry.yarnpkg.com/@rdfjs-elements/rdf-editor/-/rdf-editor-0.3.9.tgz#0184975abe27a5f0541d9ea749d99e729a342041"
-  integrity sha512-Ra+PtVNtyMNwyFo4mEXMJCEnpv6FpcwC8OLHsh4p1idA784WrwlYysFTC9r/jYgLmhEeXVsnVYQ8HFEpeRhX5A==
+"@rdfjs-elements/rdf-editor@^0.3.10", "@rdfjs-elements/rdf-editor@^0.3.9":
+  version "0.3.10"
+  resolved "https://registry.yarnpkg.com/@rdfjs-elements/rdf-editor/-/rdf-editor-0.3.10.tgz#cffd278adc01ec086ae4ea45d9c514b904d5d680"
+  integrity sha512-pfm4ntGxTaBa/0dMbPS2pVR6eOP3oCAhOS56BtpangTUKqXqrjnvggzXcvVGJ1ZVSbTr3BIpFUj9PPeTmNNWkg==
   dependencies:
     "@rdf-esm/data-model" "^0.5.4"
     "@rdfjs-elements/editor-base" "^0.1.2"
-    "@rdfjs-elements/formats-pretty" "^0.1.1"
+    "@rdfjs-elements/formats-pretty" "^0.2.0"
     readable-stream "^3"
     string-to-stream "^3.0.1"
 
