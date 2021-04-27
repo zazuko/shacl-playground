@@ -51,15 +51,19 @@ class GraphEditor extends connect(store, LitElement) {
     return html`
       <rdf-editor
         .format="${this.format}"
-        .serialized="${this.graph}"
+        .value="${this.graph}"
         auto-parse
         .parseDelay="${PARSE_DELAY}"
         .prefixes="${this.prefixes.join(",")}"
         @quads-changed="${this.__quadsChanged}"
-        @focus="${e => this.dispatchEvent(e)}"
-        @blur="${e => this.dispatchEvent(e)}"
+        @focus="${e => this.__forwardEvent(e)}"
+        @blur="${e => this.__forwardEvent(e)}"
       ></rdf-editor>
     `;
+  }
+
+  __forwardEvent(e) {
+    this.dispatchEvent(new Event(e.type));
   }
 
   __quadsChanged(e) {
