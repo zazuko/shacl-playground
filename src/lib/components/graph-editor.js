@@ -56,6 +56,8 @@ class GraphEditor extends connect(store, LitElement) {
         .parseDelay="${PARSE_DELAY}"
         .prefixes="${this.prefixes.join(",")}"
         @quads-changed="${this.__quadsChanged}"
+        @focus="${e => this.dispatchEvent(e)}"
+        @blur="${e => this.dispatchEvent(e)}"
       ></rdf-editor>
     `;
   }

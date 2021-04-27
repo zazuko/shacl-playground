@@ -1339,7 +1339,7 @@
     "@polymer/iron-meta" "^3.0.0-pre.26"
     "@polymer/polymer" "^3.0.0"
 
-"@polymer/iron-media-query@^3.0.0":
+"@polymer/iron-media-query@^3.0.0", "@polymer/iron-media-query@^3.0.1":
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@polymer/iron-media-query/-/iron-media-query-3.0.1.tgz#5cd8a1c1e8c9b8bafd3dd5da14e0f8d2cfa76d83"
   integrity sha512-czUX1pm1zfmfcZtq5J57XFkcobBv08Y50exp0/3v8Bos5VL/jv2tU0RwiTfDBxUMhjicGbgwEBFQPY2V5DMzyw==
@@ -2197,6 +2197,18 @@
     "@vaadin/vaadin-material-styles" "^20.0.0-alpha4"
     "@vaadin/vaadin-overlay" "^20.0.0-alpha4"
     "@vaadin/vaadin-text-field" "^20.0.0-alpha4"
+    "@vaadin/vaadin-themable-mixin" "^20.0.0-alpha4"
+
+"@vaadin/vaadin-split-layout@20.0.0-alpha4":
+  version "20.0.0-alpha4"
+  resolved "https://registry.yarnpkg.com/@vaadin/vaadin-split-layout/-/vaadin-split-layout-20.0.0-alpha4.tgz#e47796243dceca0f0d5ae0cd66fc314a19266aa1"
+  integrity sha512-np2JtJwd6tVnJeEyvqh1iRSya0akvWc/OQRBZyY/1NORoL/6A5oG+D6DX08Lx3W5xEyamH+0DkgIdeEXa885gQ==
+  dependencies:
+    "@polymer/iron-resizable-behavior" "^3.0.0"
+    "@polymer/polymer" "^3.0.0"
+    "@vaadin/vaadin-element-mixin" "^20.0.0-alpha4"
+    "@vaadin/vaadin-lumo-styles" "^20.0.0-alpha4"
+    "@vaadin/vaadin-material-styles" "^20.0.0-alpha4"
     "@vaadin/vaadin-themable-mixin" "^20.0.0-alpha4"
 
 "@vaadin/vaadin-tabs@^20.0.0-alpha4":
