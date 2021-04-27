@@ -206,16 +206,17 @@ export class ShaclPlayground extends connect(store, LitElement) {
               style="width: 50%"
               model="shapesGraph"
               @focus="${() => this.__pageSelected(TAB.SHAPES)}"
-              @blur="${() => this.__pageSelected(TAB.REPORT)}"
             ></graph-editor>
             <graph-editor
               style="width: 50%"
               model="dataGraph"
               @focus="${() => this.__pageSelected(TAB.DATA)}"
-              @blur="${() => this.__pageSelected(TAB.REPORT)}"
             ></graph-editor>
           </vaadin-split-layout>
-          <validation-report style="height: 40%"></validation-report>
+          <validation-report
+            style="height: 40%"
+            @click="${() => this.__pageSelected(TAB.REPORT)}"
+          ></validation-report>
         </vaadin-split-layout>
         <section>
           ${this.__renderAbout()}
