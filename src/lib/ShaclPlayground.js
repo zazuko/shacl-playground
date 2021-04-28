@@ -46,6 +46,10 @@ export class ShaclPlayground extends connect(store, LitElement) {
         color: orangered;
       }
 
+      vaadin-tab:last-child {
+        margin-left: auto;
+      }
+
       iron-pages {
         height: 100%;
         margin: 0 auto;
