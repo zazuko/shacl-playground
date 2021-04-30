@@ -220,18 +220,18 @@ export class ShaclPlayground extends connect(store, LitElement) {
               model="shapesGraph"
               @focus="${() => this.__pageSelected(TAB.SHAPES)}"
             >
-              <h1 slot="header" ?hidden="${!this.__wideDisplay}">
+              <h2 slot="header" ?hidden="${!this.__wideDisplay}">
                 ${LABEL.ShapesGraph}
-              </h1>
+              </h2>
             </graph-editor>
             <graph-editor
               style="width: 50%"
               model="dataGraph"
               @focus="${() => this.__pageSelected(TAB.DATA)}"
             >
-              <h1 slot="header" ?hidden="${!this.__wideDisplay}">
+              <h2 slot="header" ?hidden="${!this.__wideDisplay}">
                 ${LABEL.DataGraph}
-              </h1>
+              </h2>
             </graph-editor>
           </vaadin-split-layout>
           <validation-report
