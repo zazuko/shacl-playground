@@ -49,6 +49,7 @@ class GraphEditor extends connect(store, LitElement) {
 
   render() {
     return html`
+      <slot name="header"></slot>
       <rdf-editor
         .format="${this.format}"
         .value="${this.graph}"

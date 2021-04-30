@@ -26,7 +26,7 @@ class ValidationReport extends connect(store, LitElement) {
 
   render() {
     return html`
-      <h1>Validation results</h1>
+      <h1>Validation Report</h1>
       <h2>Success</h2>
       <p>${this.conforms ? "Yes" : "No"}</p>
       <h2 ?hidden="${this.results.length === 0}">Errors found</h2>

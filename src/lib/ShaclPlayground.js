@@ -16,6 +16,11 @@ const TAB = {
   REPORT: 2,
   ABOUT: 3
 };
+const LABEL = {
+  DataGraph: "Data Graph",
+  ShapesGraph: "Shapes Graph",
+  Report: "Validation Report"
+};
 
 export class ShaclPlayground extends connect(store, LitElement) {
   static get styles() {
@@ -134,17 +139,21 @@ export class ShaclPlayground extends connect(store, LitElement) {
           .selected="${this.page}"
           @selected-changed="${e => this.__pageSelected(e.detail.value)}"
         >
-          <vaadin-tab theme="icon-on-top">
+          <vaadin-tab theme="icon-on-top" title="${LABEL.ShapesGraph}">
             <iron-icon icon="vaadin:cluster"></iron-icon>
-            <span>Shapes Graph</span>
+            <span ?hidden="${this.__wideDisplay}">${LABEL.ShapesGraph}</span>
           </vaadin-tab>
-          <vaadin-tab theme="icon-on-top">
+          <vaadin-tab theme="icon-on-top" title="${LABEL.DataGraph}">
             <iron-icon icon="vaadin:database"></iron-icon>
-            <span>Data Graph</span>
+            <span ?hidden="${this.__wideDisplay}">${LABEL.DataGraph}</span>
           </vaadin-tab>
-          <vaadin-tab class="report ${this.reportClass}" theme="icon-on-top">
+          <vaadin-tab
+            class="report ${this.reportClass}"
+            theme="icon-on-top"
+            title="${LABEL.Report}"
+          >
             <iron-icon icon="${this.reportIcon}"></iron-icon>
-            <span>Validation Report</span>
+            <span ?hidden="${this.__wideDisplay}">${LABEL.Report}</span>
           </vaadin-tab>
           <vaadin-tab theme="icon-on-top">
             <iron-icon icon="vaadin:question-circle-o"></iron-icon>
@@ -210,12 +219,20 @@ export class ShaclPlayground extends connect(store, LitElement) {
               style="width: 50%"
               model="shapesGraph"
               @focus="${() => this.__pageSelected(TAB.SHAPES)}"
-            ></graph-editor>
+            >
+              <h1 slot="header" ?hidden="${!this.__wideDisplay}">
+                ${LABEL.ShapesGraph}
+              </h1>
+            </graph-editor>
             <graph-editor
               style="width: 50%"
               model="dataGraph"
               @focus="${() => this.__pageSelected(TAB.DATA)}"
-            ></graph-editor>
+            >
+              <h1 slot="header" ?hidden="${!this.__wideDisplay}">
+                ${LABEL.DataGraph}
+              </h1>
+            </graph-editor>
           </vaadin-split-layout>
           <validation-report
             style="height: 40%"
