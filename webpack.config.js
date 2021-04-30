@@ -32,7 +32,7 @@ module.exports = merge(
     },
     plugins: [
       new CopyPlugin({
-        patterns: [{ from: "CHANGELOG.md" }]
+        patterns: [{ from: "*.md" }]
       })
     ]
   }

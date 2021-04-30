@@ -279,19 +279,9 @@ export class ShaclPlayground extends connect(store, LitElement) {
 
   __renderAbout() {
     return html`
-      <h1>Zazuko SHACL Playground</h1>
-      <p>
-        The shacl-playground allows you to define Data Shapes according to the
-        <a href="https://www.w3.org/TR/shacl/"
-          >Shapes Constraint Language (SHACL)</a
-        >
-        and test them against sample data.
-      </p>
-      <p>
-        This is possible in an interactive, client-only environment.
-      </p>
+      <zero-md src="./README.md"> </zero-md>
       <h2>Changelog</h2>
-      <zero-md src="/CHANGELOG.md">
+      <zero-md src="./CHANGELOG.md">
         <template>
           <style>
             h1 {
