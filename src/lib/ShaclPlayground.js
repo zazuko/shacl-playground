@@ -55,6 +55,14 @@ export class ShaclPlayground extends connect(store, LitElement) {
         margin-left: auto;
       }
 
+      :host(:not([wide])) vaadin-tab:first-child {
+        margin-left: 72px;
+      }
+
+      :host([wide]) vaadin-tab > span {
+        display: none;
+      }
+
       iron-pages {
         height: 100%;
         margin: 0 auto;
@@ -98,7 +106,7 @@ export class ShaclPlayground extends connect(store, LitElement) {
       sharingLink: { type: String },
       sharingLinkShortened: { type: Boolean },
       sharingDialogOpen: { type: Boolean },
-      __wideDisplay: { type: String }
+      __wideDisplay: { type: Boolean, reflect: true, attribute: "wide" }
     };
   }
 
@@ -141,11 +149,11 @@ export class ShaclPlayground extends connect(store, LitElement) {
         >
           <vaadin-tab theme="icon-on-top" title="${LABEL.ShapesGraph}">
             <iron-icon icon="vaadin:cluster"></iron-icon>
-            <span ?hidden="${this.__wideDisplay}">${LABEL.ShapesGraph}</span>
+            <span>${LABEL.ShapesGraph}</span>
           </vaadin-tab>
           <vaadin-tab theme="icon-on-top" title="${LABEL.DataGraph}">
             <iron-icon icon="vaadin:database"></iron-icon>
-            <span ?hidden="${this.__wideDisplay}">${LABEL.DataGraph}</span>
+            <span>${LABEL.DataGraph}</span>
           </vaadin-tab>
           <vaadin-tab
             class="report ${this.reportClass}"
@@ -153,7 +161,7 @@ export class ShaclPlayground extends connect(store, LitElement) {
             title="${LABEL.Report}"
           >
             <iron-icon icon="${this.reportIcon}"></iron-icon>
-            <span ?hidden="${this.__wideDisplay}">${LABEL.Report}</span>
+            <span>${LABEL.Report}</span>
           </vaadin-tab>
           <vaadin-tab theme="icon-on-top">
             <iron-icon icon="vaadin:question-circle-o"></iron-icon>
@@ -220,7 +228,7 @@ export class ShaclPlayground extends connect(store, LitElement) {
               model="shapesGraph"
               @focus="${() => this.__pageSelected(TAB.SHAPES)}"
             >
-              <h2 slot="header" ?hidden="${!this.__wideDisplay}">
+              <h2 slot="header">
                 ${LABEL.ShapesGraph}
               </h2>
             </graph-editor>
@@ -229,7 +237,7 @@ export class ShaclPlayground extends connect(store, LitElement) {
               model="dataGraph"
               @focus="${() => this.__pageSelected(TAB.DATA)}"
             >
-              <h2 slot="header" ?hidden="${!this.__wideDisplay}">
+              <h2 slot="header">
                 ${LABEL.DataGraph}
               </h2>
             </graph-editor>
