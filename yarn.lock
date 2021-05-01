@@ -1339,7 +1339,7 @@
     "@polymer/iron-meta" "^3.0.0-pre.26"
     "@polymer/polymer" "^3.0.0"
 
-"@polymer/iron-media-query@^3.0.0":
+"@polymer/iron-media-query@^3.0.0", "@polymer/iron-media-query@^3.0.1":
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@polymer/iron-media-query/-/iron-media-query-3.0.1.tgz#5cd8a1c1e8c9b8bafd3dd5da14e0f8d2cfa76d83"
   integrity sha512-czUX1pm1zfmfcZtq5J57XFkcobBv08Y50exp0/3v8Bos5VL/jv2tU0RwiTfDBxUMhjicGbgwEBFQPY2V5DMzyw==
@@ -1489,10 +1489,10 @@
     "@tpluscode/rdf-ns-builders" "^0.4"
     "@tpluscode/rdfine" "^0.5.17"
 
-"@rdfjs-elements/editor-base@^0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@rdfjs-elements/editor-base/-/editor-base-0.1.2.tgz#6e9729d04f601753fd5efcc474f6a267305bc9ef"
-  integrity sha512-SSd/HziUyoGzK9HZZaGv/UAl71yOVkQ8quQPLyklxd+Ys8C/A3i6+vpDqdiqpBYcsVB/2iMTnb4xu/jIMVBnAA==
+"@rdfjs-elements/editor-base@^0.2.0":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@rdfjs-elements/editor-base/-/editor-base-0.2.1.tgz#71806fecdc2171ca363d9e888b553b7e1097ace2"
+  integrity sha512-R8bBJtqcVE2GrHX0Mx9tL4JCGhvrBOYDFRM9pN8Bgp00HwGz7tRjko0jUaAcW38xivTdqNe6Bt7f3NQdll5HfQ==
   dependencies:
     "@tpluscode/rdf-ns-builders" "^0.4.0"
     "@vanillawc/wc-codemirror" "^1.9.1"
@@ -1514,23 +1514,23 @@
     "@rdf-esm/sink-map" "^0.5.4"
     "@rdfjs/serializer-jsonld-ext" "^2.0.0"
 
-"@rdfjs-elements/rdf-editor@^0.3.10", "@rdfjs-elements/rdf-editor@^0.3.9":
-  version "0.3.10"
-  resolved "https://registry.yarnpkg.com/@rdfjs-elements/rdf-editor/-/rdf-editor-0.3.10.tgz#cffd278adc01ec086ae4ea45d9c514b904d5d680"
-  integrity sha512-pfm4ntGxTaBa/0dMbPS2pVR6eOP3oCAhOS56BtpangTUKqXqrjnvggzXcvVGJ1ZVSbTr3BIpFUj9PPeTmNNWkg==
+"@rdfjs-elements/rdf-editor@^0.4.0", "@rdfjs-elements/rdf-editor@^0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@rdfjs-elements/rdf-editor/-/rdf-editor-0.4.1.tgz#cc438b3bd7fca29a65143f406fc2de86849d81e3"
+  integrity sha512-Gpbp5EZ0sHBWfd5T1ijppG0s0Ou0O61St3e3RufXDhxxLj3wjHmxTkv5dyfvXr7ni+xA9jmRBoe0fpJrvWVXng==
   dependencies:
     "@rdf-esm/data-model" "^0.5.4"
-    "@rdfjs-elements/editor-base" "^0.1.2"
+    "@rdfjs-elements/editor-base" "^0.2.0"
     "@rdfjs-elements/formats-pretty" "^0.2.0"
     readable-stream "^3"
     string-to-stream "^3.0.1"
 
-"@rdfjs-elements/rdf-snippet@^0.3":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@rdfjs-elements/rdf-snippet/-/rdf-snippet-0.3.0.tgz#f8bc48264e886fb4b4136be76d3047e6059c4961"
-  integrity sha512-VuywzzjE2onxHesxP1MIO/IycB77+HPkATsMXUaCVDsjWtolhKvcquzgNU0xkPTIYMXoMTrNTMjg4e3uxGp+8Q==
+"@rdfjs-elements/rdf-snippet@^0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@rdfjs-elements/rdf-snippet/-/rdf-snippet-0.3.1.tgz#c28e4021187032409819a5cd961913357d63c2ba"
+  integrity sha512-LlCLVBMsolgIRA90yp+MPvaQk3X6Y2MFy6QX5jMrQDVJeejk5bbuRNOzFanQm9bR9542P4Ky6qvhLV5R8oYQcw==
   dependencies:
-    "@rdfjs-elements/rdf-editor" "^0.3.9"
+    "@rdfjs-elements/rdf-editor" "^0.4.0"
     lit-element "^2.3.1"
     lit-html "^1.2.1"
 
@@ -2197,6 +2197,18 @@
     "@vaadin/vaadin-material-styles" "^20.0.0-alpha4"
     "@vaadin/vaadin-overlay" "^20.0.0-alpha4"
     "@vaadin/vaadin-text-field" "^20.0.0-alpha4"
+    "@vaadin/vaadin-themable-mixin" "^20.0.0-alpha4"
+
+"@vaadin/vaadin-split-layout@20.0.0-alpha4":
+  version "20.0.0-alpha4"
+  resolved "https://registry.yarnpkg.com/@vaadin/vaadin-split-layout/-/vaadin-split-layout-20.0.0-alpha4.tgz#e47796243dceca0f0d5ae0cd66fc314a19266aa1"
+  integrity sha512-np2JtJwd6tVnJeEyvqh1iRSya0akvWc/OQRBZyY/1NORoL/6A5oG+D6DX08Lx3W5xEyamH+0DkgIdeEXa885gQ==
+  dependencies:
+    "@polymer/iron-resizable-behavior" "^3.0.0"
+    "@polymer/polymer" "^3.0.0"
+    "@vaadin/vaadin-element-mixin" "^20.0.0-alpha4"
+    "@vaadin/vaadin-lumo-styles" "^20.0.0-alpha4"
+    "@vaadin/vaadin-material-styles" "^20.0.0-alpha4"
     "@vaadin/vaadin-themable-mixin" "^20.0.0-alpha4"
 
 "@vaadin/vaadin-tabs@^20.0.0-alpha4":

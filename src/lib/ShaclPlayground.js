@@ -5,14 +5,32 @@ import "@vaadin/vaadin-app-layout/vaadin-app-layout.js";
 import "@vaadin/vaadin-tabs/vaadin-tabs.js";
 import "@vaadin/vaadin-tabs/vaadin-tab.js";
 import "@polymer/iron-pages/iron-pages.js";
+import "@polymer/iron-media-query/iron-media-query.js";
 import "@vaadin/vaadin-ordered-layout/vaadin-vertical-layout.js";
+import "@vaadin/vaadin-split-layout/vaadin-split-layout.js";
 import { store } from "./store/index.js";
+
+const TAB = {
+  SHAPES: 0,
+  DATA: 1,
+  REPORT: 2,
+  ABOUT: 3
+};
+const LABEL = {
+  DataGraph: "Data Graph",
+  ShapesGraph: "Shapes Graph",
+  Report: "Validation Report"
+};
 
 export class ShaclPlayground extends connect(store, LitElement) {
   static get styles() {
     return css`
-      vaadin-app-layout {
+      :host {
+        display: block;
         height: 100vh;
+      }
+
+      vaadin-app-layout {
         display: flex;
         flex-flow: column;
       }
@@ -33,23 +51,49 @@ export class ShaclPlayground extends connect(store, LitElement) {
         color: orangered;
       }
 
+      vaadin-tab:last-child {
+        margin-left: auto;
+      }
+
+      :host(:not([wide])) vaadin-tab:first-child {
+        margin-left: 72px;
+      }
+
+      :host([wide]) vaadin-tab > span {
+        display: none;
+      }
+
       iron-pages {
-        max-width: 1000px;
+        height: 100%;
         margin: 0 auto;
-        padding: 20px 20px 0;
+        padding: 0 20px 0;
+      }
+
+      vaadin-split-layout#top-split {
+        height: 100%;
+      }
+
+      iron-pages#narrow {
+        height: 85%;
+        max-width: 1000px;
+        padding-top: 20px;
         flex: 1;
       }
 
       section {
-        height: 90vh;
+        height: 100%;
       }
 
-      vaadin-button[slot="navbar"] {
+      vaadin-button.navbar {
         margin-right: 10px;
       }
 
       #about-drawer > * {
         width: 100%;
+      }
+
+      [hidden] {
+        display: none;
       }
     `;
   }
@@ -61,7 +105,8 @@ export class ShaclPlayground extends connect(store, LitElement) {
       reportIcon: { type: String },
       sharingLink: { type: String },
       sharingLinkShortened: { type: Boolean },
-      sharingDialogOpen: { type: Boolean }
+      sharingDialogOpen: { type: Boolean },
+      __wideDisplay: { type: Boolean, reflect: true, attribute: "wide" }
     };
   }
 
@@ -86,27 +131,37 @@ export class ShaclPlayground extends connect(store, LitElement) {
 
   render() {
     return html`
+      <iron-media-query
+        query="(min-width: 800px)"
+        @query-matches-changed="${this.__setWideDisplay}"
+      ></iron-media-query>
+
       <vaadin-app-layout>
         <vaadin-drawer-toggle
+          ?hidden="${this.__wideDisplay}"
           slot="navbar [touch-optimized]"
         ></vaadin-drawer-toggle>
         <vaadin-tabs
           slot="navbar"
           theme="centered"
           .selected="${this.page}"
-          @selected-changed="${this.__pageSelected}"
+          @selected-changed="${e => this.__pageSelected(e.detail.value)}"
         >
-          <vaadin-tab theme="icon-on-top">
+          <vaadin-tab theme="icon-on-top" title="${LABEL.ShapesGraph}">
             <iron-icon icon="vaadin:cluster"></iron-icon>
-            <span>Shapes Graph</span>
+            <span>${LABEL.ShapesGraph}</span>
           </vaadin-tab>
-          <vaadin-tab theme="icon-on-top">
+          <vaadin-tab theme="icon-on-top" title="${LABEL.DataGraph}">
             <iron-icon icon="vaadin:database"></iron-icon>
-            <span>Data Graph</span>
+            <span>${LABEL.DataGraph}</span>
           </vaadin-tab>
-          <vaadin-tab class="report ${this.reportClass}" theme="icon-on-top">
+          <vaadin-tab
+            class="report ${this.reportClass}"
+            theme="icon-on-top"
+            title="${LABEL.Report}"
+          >
             <iron-icon icon="${this.reportIcon}"></iron-icon>
-            <span>Validation Report</span>
+            <span>${LABEL.Report}</span>
           </vaadin-tab>
           <vaadin-tab theme="icon-on-top">
             <iron-icon icon="vaadin:question-circle-o"></iron-icon>
@@ -114,14 +169,16 @@ export class ShaclPlayground extends connect(store, LitElement) {
           </vaadin-tab>
         </vaadin-tabs>
         <vaadin-button
-          slot="navbar"
+          class="navbar"
+          slot="navbar [touch-optimized]"
           title="Share"
           @click="${this.__openSharingDialog}"
         >
           <iron-icon icon="vaadin:share"></iron-icon>
         </vaadin-button>
         <vaadin-button
-          slot="navbar"
+          class="navbar"
+          slot="navbar [touch-optimized]"
           title="Open in Shaperone playground"
           @click="${this.__openPlayground}"
         >
@@ -144,22 +201,7 @@ export class ShaclPlayground extends connect(store, LitElement) {
           </vaadin-vertical-layout>
         </iron-pages>
 
-        <iron-pages selected="${this.page}" @iron-select="${this.__loadPage}">
-          <section id="shapes-graph">
-            <graph-editor model="shapesGraph"></graph-editor>
-          </section>
-          <section id="data-graph">
-            <graph-editor model="dataGraph"></graph-editor>
-          </section>
-          <section id="validation-report">
-            <validation-report></validation-report>
-          </section>
-          <section>
-            <zero-md src="/CHANGELOG.md"> </zero-md>
-
-            <p>Copyright © 2021 Zazuko GmbH</p>
-          </section>
-        </iron-pages>
+        ${this.__wideDisplay ? this.__renderWide() : this.__renderNarrow()}
       </vaadin-app-layout>
 
       <vaadin-dialog
@@ -170,6 +212,85 @@ export class ShaclPlayground extends connect(store, LitElement) {
         }}"
       >
       </vaadin-dialog>
+    `;
+  }
+
+  __renderWide() {
+    import("./validation-report.js");
+    const selected = this.page === TAB.ABOUT ? 1 : 0;
+
+    return html`
+      <iron-pages selected="${selected}">
+        <vaadin-split-layout id="top-split" orientation="vertical">
+          <vaadin-split-layout style="height: 60%">
+            <graph-editor
+              style="width: 50%"
+              model="shapesGraph"
+              @focus="${() => this.__pageSelected(TAB.SHAPES)}"
+            >
+              <h2 slot="header">
+                ${LABEL.ShapesGraph}
+              </h2>
+            </graph-editor>
+            <graph-editor
+              style="width: 50%"
+              model="dataGraph"
+              @focus="${() => this.__pageSelected(TAB.DATA)}"
+            >
+              <h2 slot="header">
+                ${LABEL.DataGraph}
+              </h2>
+            </graph-editor>
+          </vaadin-split-layout>
+          <validation-report
+            style="height: 40%"
+            @click="${() => this.__pageSelected(TAB.REPORT)}"
+          ></validation-report>
+        </vaadin-split-layout>
+        <section>
+          ${this.__renderAbout()}
+        </section>
+      </iron-pages>
+    `;
+  }
+
+  __renderNarrow() {
+    return html`
+      <iron-pages
+        id="narrow"
+        selected="${this.page}"
+        @iron-select="${this.__loadPage}"
+      >
+        <section id="shapes-graph">
+          <graph-editor model="shapesGraph"></graph-editor>
+        </section>
+        <section id="data-graph">
+          <graph-editor model="dataGraph"></graph-editor>
+        </section>
+        <section id="validation-report">
+          <validation-report></validation-report>
+        </section>
+        <section>
+          ${this.__renderAbout()}
+        </section>
+      </iron-pages>
+    `;
+  }
+
+  __renderAbout() {
+    return html`
+      <zero-md src="./README.md"> </zero-md>
+      <h2>Changelog</h2>
+      <zero-md src="./CHANGELOG.md">
+        <template>
+          <style>
+            h1 {
+              display: none;
+            }
+          </style>
+        </template>
+      </zero-md>
+      <p>Copyright © 2021 Zazuko GmbH</p>
     `;
   }
 
@@ -226,8 +347,8 @@ export class ShaclPlayground extends connect(store, LitElement) {
     };
   }
 
-  __pageSelected(e) {
-    store.dispatch.playground.switchPage(e.detail.value);
+  __pageSelected(page) {
+    store.dispatch.playground.switchPage(page);
   }
 
   __reset() {
@@ -265,5 +386,9 @@ export class ShaclPlayground extends connect(store, LitElement) {
     const response = await fetch(shortnenerUrl);
 
     this.sharingLink = await response.text();
+  }
+
+  __setWideDisplay(e) {
+    this.__wideDisplay = e.detail.value;
   }
 }
