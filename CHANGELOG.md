@@ -1,5 +1,11 @@
 # @zazuko/shacl-playground
 
+## 1.0.0
+
+### Major Changes
+
+- 7c908dd: Use split layout on large screens
+
 ## 0.2.0
 
 ### Minor Changes
