@@ -24,6 +24,10 @@ class PrefixList extends LitElement {
         width: 100%;
       }
 
+      vaadin-item {
+        cursor: pointer;
+      }
+
       vaadin-item::before {
         opacity: 0;
         content: var(--lumo-icons-checkmark);
