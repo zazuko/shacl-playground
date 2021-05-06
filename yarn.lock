@@ -1081,21 +1081,23 @@
     "@graphy/core.iso.stream" "^4.3.3"
     uri-js "^4.4.0"
 
-"@graphy/content.trig.scribe@^4.3.3":
+"@graphy/content.trig.write@^4.3.3":
   version "4.3.3"
-  resolved "https://registry.yarnpkg.com/@graphy/content.trig.scribe/-/content.trig.scribe-4.3.3.tgz#193519c48677cbe0f321981271194e4f6fa5515c"
-  integrity sha512-BdGDIUDNlcEhFPoG/xrEhFwzy4XAkSobnGA6pZdYY9mcc+gF7pWCfqmejYBh5zQO4Rt6pbWy5KYEK+ODXFFnSw==
+  resolved "https://registry.yarnpkg.com/@graphy/content.trig.write/-/content.trig.write-4.3.3.tgz#80d95606d073f1f9e0ef6006b3dd37338ea66f96"
+  integrity sha512-lr6/uxuMHZbTdyattS5UnKhvfBtqSoIszrtaaSGdF16GjLfXy42+JcMNcPknoe5RnjDnn78PlYH5TMI6KbKPnA==
   dependencies:
     "@graphy/core.class.writable" "^4.3.3"
     "@graphy/core.data.factory" "^4.3.3"
+    big-integer "^1.6.48"
 
-"@graphy/content.ttl.scribe@^4.3.3":
+"@graphy/content.ttl.write@^4.3.3":
   version "4.3.3"
-  resolved "https://registry.yarnpkg.com/@graphy/content.ttl.scribe/-/content.ttl.scribe-4.3.3.tgz#8bead82119c4ded4a0dec6498d3d05f2b6b84138"
-  integrity sha512-II3B13zk0pMe5uxUFXGKdgzBBF45zX0/txjbM9BEQJnI/5JyWcNlI6YlDZJLaCSovyT+URI2oIQRODtC7FubvA==
+  resolved "https://registry.yarnpkg.com/@graphy/content.ttl.write/-/content.ttl.write-4.3.3.tgz#8e1074a7a0fc60c9271a0b5bba60f7258db2f90b"
+  integrity sha512-UTY1kz1vhw4ugcgOk1XptqGgHjFH8yDSACfMNBZadE9sUrYvloeiY4QcCrHX1CZXf2/p9kHwEd0pB/7orbVYAQ==
   dependencies:
     "@graphy/core.class.writable" "^4.3.3"
     "@graphy/core.data.factory" "^4.3.3"
+    big-integer "^1.6.48"
 
 "@graphy/content.xml.scribe@^4.3.3":
   version "4.3.3"
@@ -1500,28 +1502,32 @@
     lit-element "^2.2.1"
     throttle-debounce "^3.0.1"
 
-"@rdfjs-elements/formats-pretty@^0.2.0", "@rdfjs-elements/formats-pretty@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@rdfjs-elements/formats-pretty/-/formats-pretty-0.2.1.tgz#3e9394a70f237f95585eacfca202fc652c145061"
-  integrity sha512-LOuIJN2M8EPxlXEptjBIOisa8mXmBex5HuBZqa7K/SYzlO3AWYroBrMckv4SgdBR24D6SJKAkdZuWqmCltq2oA==
+"@rdfjs-elements/formats-pretty@^0.3.0", "@rdfjs-elements/formats-pretty@^0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@rdfjs-elements/formats-pretty/-/formats-pretty-0.3.1.tgz#a941079a8184853d9abcb3a29ae39795c595b223"
+  integrity sha512-+iLdhf2njOnSk5qQqMKBfhjYPahxFDhWQC04vgcg6dvl+s/Kp9JPFSUWCzd8uq4Z4jDxN8+2gugf956VYYSJIw==
   dependencies:
     "@graphy/content.nq.read" "^4.3.3"
     "@graphy/content.trig.read" "^4.3.3"
-    "@graphy/content.trig.scribe" "^4.3.3"
-    "@graphy/content.ttl.scribe" "^4.3.3"
+    "@graphy/content.trig.write" "^4.3.3"
+    "@graphy/content.ttl.write" "^4.3.3"
     "@graphy/content.xml.scribe" "^4.3.3"
+    "@graphy/core.data.factory" "^4.3.3"
     "@rdf-esm/formats-common" "^0.5.5"
     "@rdf-esm/sink-map" "^0.5.4"
+    "@rdf-esm/term-map" "^0.5.0"
     "@rdfjs/serializer-jsonld-ext" "^2.0.0"
+    "@tpluscode/rdf-ns-builders" "^0.4.2"
+    readable-stream "^3.6.0"
 
-"@rdfjs-elements/rdf-editor@^0.4.0", "@rdfjs-elements/rdf-editor@^0.4.1":
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/@rdfjs-elements/rdf-editor/-/rdf-editor-0.4.1.tgz#cc438b3bd7fca29a65143f406fc2de86849d81e3"
-  integrity sha512-Gpbp5EZ0sHBWfd5T1ijppG0s0Ou0O61St3e3RufXDhxxLj3wjHmxTkv5dyfvXr7ni+xA9jmRBoe0fpJrvWVXng==
+"@rdfjs-elements/rdf-editor@^0.4.0", "@rdfjs-elements/rdf-editor@^0.4.3":
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/@rdfjs-elements/rdf-editor/-/rdf-editor-0.4.3.tgz#361817cdcc7e4767d2c90dbd811e5bf2bb2badd4"
+  integrity sha512-HLb4ljiDYQC0QVwmUNXEGJUoH0vZwIKxMOC0tQSB6YGZtm6LwtL2HsclLdHFLxkVnjwTLF8MOsAskx4pAb61Iw==
   dependencies:
     "@rdf-esm/data-model" "^0.5.4"
     "@rdfjs-elements/editor-base" "^0.2.0"
-    "@rdfjs-elements/formats-pretty" "^0.2.0"
+    "@rdfjs-elements/formats-pretty" "^0.3.1"
     readable-stream "^3"
     string-to-stream "^3.0.1"
 
@@ -2920,6 +2926,11 @@ better-path-resolve@1.0.0:
   integrity sha512-pbnl5XzGBdrFU/wT4jqmJVPn2B6UHPBOhzMQkY/SPUPB6QtUXtmBHBIwCbXJol93mOpGMnQyP/+BB19q04xj7g==
   dependencies:
     is-windows "^1.0.0"
+
+big-integer@^1.6.48:
+  version "1.6.48"
+  resolved "https://registry.yarnpkg.com/big-integer/-/big-integer-1.6.48.tgz#8fd88bd1632cba4a1c8c3e3d7159f08bb95b4b9e"
+  integrity sha512-j51egjPa7/i+RdiRuJbPdJ2FIUYYPhvYLjzoYbcMMm62ooO6F94fETG4MTs46zPAF9Brs04OajboA/qTGuz78w==
 
 big.js@^5.2.2:
   version "5.2.2"
