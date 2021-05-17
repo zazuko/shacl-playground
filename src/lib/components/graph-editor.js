@@ -35,7 +35,8 @@ class GraphEditor extends connect(store, LitElement) {
       format: { type: String },
       graph: { type: String },
       model: { type: String },
-      prefixes: { type: Array }
+      prefixes: { type: Array },
+      customPrefixes: { type: Object }
     };
   }
 
@@ -56,6 +57,7 @@ class GraphEditor extends connect(store, LitElement) {
         auto-parse
         .parseDelay="${PARSE_DELAY}"
         .prefixes="${this.prefixes.join(",")}"
+        .customPrefixes="${this.customPrefixes}"
         @quads-changed="${this.__quadsChanged}"
         @focus="${e => this.__forwardEvent(e)}"
         @blur="${e => this.__forwardEvent(e)}"
@@ -78,6 +80,7 @@ class GraphEditor extends connect(store, LitElement) {
     return {
       format: state[this.model].format,
       prefixes: state[this.model].prefixes,
+      customPrefixes: state[this.model].customPrefixes || {},
       graph: state[this.model].graph
     };
   }

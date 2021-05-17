@@ -36,6 +36,7 @@
     "@vaadin/vaadin-select": "^20.0.0-alpha4",
     "@vaadin/vaadin-split-layout": "20.0.0-alpha4",
     "@vaadin/vaadin-tabs": "^20.0.0-alpha4",
+    "@vaadin/vaadin-text-field": "^20.0.0-alpha4",
     "@zazuko/rdf-vocabularies": "^2021.3.31",
     "clownface": "^1.2.0",
     "lit-element": "^2.4.0",
