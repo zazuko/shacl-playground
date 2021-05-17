@@ -75,13 +75,31 @@ export const playground = createModel({
           value: format
         });
       },
+      "dataGraph/setCustomPrefix": function() {
+        dispatch.playground.setSharingParam({
+          key: "dataGraphCustomPrefixes",
+          value: JSON.stringify(store.getState().dataGraph.customPrefixes)
+        });
+      },
+      "shapesGraph/setCustomPrefix": function() {
+        dispatch.playground.setSharingParam({
+          key: "shapesGraphCustomPrefixes",
+          value: JSON.stringify(store.getState().shapesGraph.customPrefixes)
+        });
+      },
       restoreState() {
         const url = new URL(document.location.toString());
 
         const shapesGraph = url.searchParams.get("shapesGraph");
         const shapesGraphFormat = url.searchParams.get("shapesGraphFormat");
+        const shapesGraphCustomPrefixes = url.searchParams.get(
+          "shapesGraphCustomPrefixes"
+        );
         const dataGraph = url.searchParams.get("dataGraph");
         const dataGraphFormat = url.searchParams.get("dataGraphFormat");
+        const dataGraphCustomPrefixes = url.searchParams.get(
+          "dataGraphCustomPrefixes"
+        );
 
         if (shapesGraph) {
           dispatch.shapesGraph.setGraph(shapesGraph);
@@ -89,11 +107,21 @@ export const playground = createModel({
         if (shapesGraphFormat) {
           dispatch.shapesGraph.changeFormat(shapesGraphFormat);
         }
+        if (shapesGraphCustomPrefixes) {
+          dispatch.shapesGraph.replaceCustomPrefixes(
+            JSON.parse(shapesGraphCustomPrefixes)
+          );
+        }
         if (dataGraph) {
           dispatch.dataGraph.setGraph(dataGraph);
         }
         if (dataGraphFormat) {
           dispatch.dataGraph.changeFormat(dataGraphFormat);
+        }
+        if (dataGraphCustomPrefixes) {
+          dispatch.dataGraph.replaceCustomPrefixes(
+            JSON.parse(dataGraphCustomPrefixes)
+          );
         }
 
         [...url.searchParams.keys()].forEach(key =>

@@ -5,13 +5,15 @@ import "@vaadin/vaadin-select/vaadin-select.js";
 import { formats } from "@rdfjs-elements/formats-pretty";
 import { store } from "../store/index.js";
 import "./prefix-list.js";
+import "./custom-prefixes.js";
 
 class EditorDrawer extends connect(store, LitElement) {
   static get properties() {
     return {
       format: { type: String },
       model: { type: String },
-      prefixes: { type: Array }
+      prefixes: { type: Array },
+      customPrefixes: { type: Object }
     };
   }
 
@@ -40,6 +42,8 @@ class EditorDrawer extends connect(store, LitElement) {
         </vaadin-select>
 
         <prefix-list .selected="${this.prefixes}"></prefix-list>
+
+        <custom-prefixes .prefixes="${this.customPrefixes}"></custom-prefixes>
       </vaadin-form-layout>
     `;
   }
@@ -47,7 +51,8 @@ class EditorDrawer extends connect(store, LitElement) {
   mapState(state) {
     return {
       format: state[this.model].format,
-      prefixes: state[this.model].prefixes
+      prefixes: state[this.model].prefixes,
+      customPrefixes: state[this.model].customPrefixes || {}
     };
   }
 
@@ -56,7 +61,9 @@ class EditorDrawer extends connect(store, LitElement) {
       "prefix-selected": e =>
         store.dispatch[this.model].addPrefix(e.detail.value),
       "prefix-unselected": e =>
-        store.dispatch[this.model].removePrefix(e.detail.value)
+        store.dispatch[this.model].removePrefix(e.detail.value),
+      "custom-prefix-set": e =>
+        store.dispatch[this.model].setCustomPrefix(e.detail)
     };
   }
 

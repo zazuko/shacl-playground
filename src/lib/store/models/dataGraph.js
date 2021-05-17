@@ -6,7 +6,8 @@ export const dataGraph = createModel({
   state: {
     format: "application/ld+json",
     graph: data,
-    prefixes: []
+    prefixes: [],
+    customPrefixes: {}
   },
   reducers: {
     ...graphReducers

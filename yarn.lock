@@ -1502,7 +1502,7 @@
     lit-element "^2.2.1"
     throttle-debounce "^3.0.1"
 
-"@rdfjs-elements/formats-pretty@^0.3.0", "@rdfjs-elements/formats-pretty@^0.3.1":
+"@rdfjs-elements/formats-pretty@^0.3.1":
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/@rdfjs-elements/formats-pretty/-/formats-pretty-0.3.1.tgz#a941079a8184853d9abcb3a29ae39795c595b223"
   integrity sha512-+iLdhf2njOnSk5qQqMKBfhjYPahxFDhWQC04vgcg6dvl+s/Kp9JPFSUWCzd8uq4Z4jDxN8+2gugf956VYYSJIw==

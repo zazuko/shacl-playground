@@ -30,3 +30,29 @@ export function removePrefix(state, prefix) {
     prefixes: state.prefixes.filter(p => p !== prefix)
   };
 }
+
+export function setCustomPrefix(state, { prefix, namespace }) {
+  if (typeof prefix !== "string" || typeof namespace !== "string") {
+    return state;
+  }
+
+  const customPrefixes = { ...state.customPrefixes };
+
+  if (!namespace) {
+    delete customPrefixes[prefix];
+  } else {
+    customPrefixes[prefix] = namespace;
+  }
+
+  return {
+    ...state,
+    customPrefixes
+  };
+}
+
+export function replaceCustomPrefixes(state, prefixes) {
+  return {
+    ...state,
+    customPrefixes: prefixes
+  };
+}
