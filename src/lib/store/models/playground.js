@@ -33,6 +33,12 @@ export const playground = createModel({
     const dispatch = store.getDispatch();
 
     return {
+      switchPage(value) {
+        dispatch.playground.setSharingParam({
+          key: "page",
+          value
+        });
+      },
       "dataGraph/parsed": function({ serialized }) {
         const { format } = store.getState().dataGraph;
 
@@ -78,11 +84,15 @@ export const playground = createModel({
       restoreState() {
         const url = new URL(document.location.toString());
 
+        const page = url.searchParams.get("page");
         const shapesGraph = url.searchParams.get("shapesGraph");
         const shapesGraphFormat = url.searchParams.get("shapesGraphFormat");
         const dataGraph = url.searchParams.get("dataGraph");
         const dataGraphFormat = url.searchParams.get("dataGraphFormat");
 
+        if (page) {
+          dispatch.playground.switchPage(Number.parseInt(page, 10));
+        }
         if (shapesGraph) {
           dispatch.shapesGraph.setGraph(shapesGraph);
         }
