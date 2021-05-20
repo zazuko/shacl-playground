@@ -26,3 +26,23 @@ jobs:
         uses: changesets/action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  tags:
+    name: Create tags
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Generate token
+        id: generate_token
+        uses: tibdex/github-app-token@v1
+        with:
+          app_id: ${{ secrets.GH_APP_ID }}
+          private_key: ${{ secrets.GH_PRIVATE_KEY }}
+
+      - name: Tag Release
+        uses: tpluscode/action-autotag@min-version-21
+        with:
+          tag_prefix: v
+        env:
+          GITHUB_TOKEN: ${{ steps.generate_token.outputs.token }}
