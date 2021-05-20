@@ -1,5 +1,17 @@
 # @zazuko/shacl-playground
 
+## 1.1.0
+
+### Minor Changes
+
+- da11823: Custom prefixes can be defined for graphs
+
+### Patch Changes
+
+- ea9913d: Better serialization output in turtle
+- 299a70d: Add pointer cursor to prefixes to indicate they are clickable
+- b11c0a2: Selected tab was not included in sharing link
+
 ## 1.0.0
 
 ### Major Changes
