@@ -174,7 +174,7 @@ export class ShaclPlayground extends connect(store, LitElement) {
           title="Share"
           @click="${this.__openSharingDialog}"
         >
-          <iron-icon icon="vaadin:share"></iron-icon>
+          <iron-icon icon="vaadin:connect"></iron-icon>
         </vaadin-button>
         <vaadin-button
           class="navbar"
