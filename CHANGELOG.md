@@ -1,5 +1,11 @@
 # @zazuko/shacl-playground
 
+## 1.1.1
+
+### Patch Changes
+
+- 55a5e2c: Use more recognizable icon for sharing button
+
 ## 1.1.0
 
 ### Minor Changes
