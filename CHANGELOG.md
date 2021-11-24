@@ -1,5 +1,13 @@
 # @zazuko/shacl-playground
 
+## 1.1.2
+
+### Patch Changes
+
+- 6b84c8d: Editor layout would break on first render, apparently due to a race condition when loading styles
+- 6b84c8d: Updated vaadin to v21
+- 6b84c8d: Updated to lit@2
+
 ## 1.1.1
 
 ### Patch Changes
