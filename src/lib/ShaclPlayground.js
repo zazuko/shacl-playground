@@ -1,5 +1,4 @@
-import { css, html, LitElement } from "lit-element";
-import { render } from "lit-html";
+import { css, html, LitElement, render } from "lit";
 import { connect } from "@captaincodeman/rdx";
 import "@vaadin/vaadin-app-layout/vaadin-app-layout.js";
 import "@vaadin/vaadin-tabs/vaadin-tabs.js";

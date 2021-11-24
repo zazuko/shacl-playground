@@ -1,4 +1,4 @@
-import { html, LitElement } from "lit-element";
+import { html, LitElement } from "lit";
 import { shrink } from "@zazuko/rdf-vocabularies/shrink";
 import TermMap from "@rdf-esm/term-map";
 import { fromPointer } from "@rdfine/shacl/lib/ValidationResult";

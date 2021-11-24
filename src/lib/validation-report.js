@@ -1,5 +1,5 @@
 import { connect } from "@captaincodeman/rdx";
-import { html, LitElement } from "lit-element";
+import { html, LitElement } from "lit";
 import { ntriples } from "@tpluscode/rdf-string";
 import { store } from "./store/index.js";
 import "./components/validation-drawer.js";

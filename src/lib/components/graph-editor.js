@@ -1,4 +1,4 @@
-import { css, html, LitElement } from "lit-element";
+import { css, html, LitElement } from "lit";
 import "@rdfjs-elements/rdf-editor";
 import { connect } from "@captaincodeman/rdx";
 import { store } from "../store/index.js";

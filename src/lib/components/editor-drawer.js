@@ -1,5 +1,5 @@
 import { connect } from "@captaincodeman/rdx";
-import { html, LitElement } from "lit-element";
+import { html, LitElement, render } from "lit";
 import "@vaadin/vaadin-form-layout/vaadin-form-layout.js";
 import "@vaadin/vaadin-select/vaadin-select.js";
 import { formats } from "@rdfjs-elements/formats-pretty";
@@ -29,16 +29,8 @@ class EditorDrawer extends connect(store, LitElement) {
           label="Format"
           value="${this.format}"
           @value-changed="${this.__formatSelected}"
+          .renderer="${this.__renderList}"
         >
-          <template>
-            <vaadin-list-box>
-              ${Object.values(formats).map(
-                format => html`
-                  <vaadin-item value="${format}">${format}</vaadin-item>
-                `
-              )}
-            </vaadin-list-box>
-          </template>
         </vaadin-select>
 
         <prefix-list .selected="${this.prefixes}"></prefix-list>
@@ -46,6 +38,21 @@ class EditorDrawer extends connect(store, LitElement) {
         <custom-prefixes .prefixes="${this.customPrefixes}"></custom-prefixes>
       </vaadin-form-layout>
     `;
+  }
+
+  __renderList(root) {
+    render(
+      html`
+        <vaadin-list-box>
+          ${Object.values(formats).map(
+            format => html`
+              <vaadin-item value="${format}">${format}</vaadin-item>
+            `
+          )}
+        </vaadin-list-box>
+      `,
+      root
+    );
   }
 
   mapState(state) {
