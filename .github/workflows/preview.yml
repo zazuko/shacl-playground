@@ -17,7 +17,7 @@ jobs:
       - uses: nelonoel/branch-name@v1.0.1
 
       - name: Publish preview
-        uses: jsmrcaga/action-netlify-deploy@v1.6.0
+        uses: jsmrcaga/action-netlify-deploy@v1.7.1
         with:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
@@ -26,6 +26,7 @@ jobs:
           deploy_alias: ${{ env.BRANCH_NAME }}
           NETLIFY_DEPLOY_TO_PROD: false
           build_command: yarn build
+          node_version: 14
 
       - name: Status check
         uses: Sibz/github-status-action@v1.1.1
