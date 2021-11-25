@@ -1,5 +1,12 @@
 # @zazuko/shacl-playground
 
+## 1.1.3
+
+### Patch Changes
+
+- bd4a06f: In some browsers there would be double scrollbars around editors
+- 07d180a: Updated JSON-LD libraries
+
 ## 1.1.2
 
 ### Patch Changes
