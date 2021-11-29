@@ -1,5 +1,11 @@
 # @zazuko/shacl-playground
 
+## 1.1.4
+
+### Patch Changes
+
+- c9918a9: Update graphy (fixes #16)
+
 ## 1.1.3
 
 ### Patch Changes
