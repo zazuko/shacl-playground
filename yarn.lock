@@ -1074,75 +1074,75 @@
     strip-json-comments "^3.1.1"
 
 "@graphy/content.nq.read@^4.3.3":
-  version "4.3.3"
-  resolved "https://registry.yarnpkg.com/@graphy/content.nq.read/-/content.nq.read-4.3.3.tgz#c7cfa3e5d57c1d7e247e69057c44c118f262bcac"
-  integrity sha512-+mA/a5RzqlVwdTQzST5JNNiPR2mbWEFfDWvmf/fUaSGpb0Lj8NEaGxb+NwKlS0Q3fnx6lbglfyONfdLcRfZhOA==
+  version "4.3.4"
+  resolved "https://registry.yarnpkg.com/@graphy/content.nq.read/-/content.nq.read-4.3.4.tgz#51d772ee2513dd8f39258bb355a3d81598d673d3"
+  integrity sha512-Z438rZfkfzn7MgpCZGDfdA7zlkMEsc2sF/egTkiyqXj2tjLg3cQKdMYADcFQBxozk0bPqhsqCN3GWjYvE+R/Lg==
   dependencies:
-    "@graphy/core.data.factory" "^4.3.3"
-    "@graphy/core.iso.stream" "^4.3.3"
+    "@graphy/core.data.factory" "^4.3.4"
+    "@graphy/core.iso.stream" "^4.3.4"
 
 "@graphy/content.trig.read@^4.3.3":
-  version "4.3.3"
-  resolved "https://registry.yarnpkg.com/@graphy/content.trig.read/-/content.trig.read-4.3.3.tgz#549bf1868dbe85191544f8b1f44b72f2e2be446e"
-  integrity sha512-yzxsbnG+4MAOiaqcd9wrjMBnAopiHmyCKCFVX0e+SMs37bT+rKwZFz93Gdgo1De5xxpNHTB7d3R5Z/CginfewQ==
+  version "4.3.4"
+  resolved "https://registry.yarnpkg.com/@graphy/content.trig.read/-/content.trig.read-4.3.4.tgz#fdfba0e66b8bfb928de82660904bbb0197b3e7db"
+  integrity sha512-kShOOxR/OgK/cX/rlkcAyGtwc2kPdvQv2KBEMrrqGLMwQoRUDZiYOZlwepmRTX84KR3gYXpCh78OsftjuIVAiA==
   dependencies:
-    "@graphy/core.data.factory" "^4.3.3"
-    "@graphy/core.iso.stream" "^4.3.3"
+    "@graphy/core.data.factory" "^4.3.4"
+    "@graphy/core.iso.stream" "^4.3.4"
     uri-js "^4.4.0"
 
 "@graphy/content.trig.write@^4.3.3":
-  version "4.3.3"
-  resolved "https://registry.yarnpkg.com/@graphy/content.trig.write/-/content.trig.write-4.3.3.tgz#80d95606d073f1f9e0ef6006b3dd37338ea66f96"
-  integrity sha512-lr6/uxuMHZbTdyattS5UnKhvfBtqSoIszrtaaSGdF16GjLfXy42+JcMNcPknoe5RnjDnn78PlYH5TMI6KbKPnA==
+  version "4.3.4"
+  resolved "https://registry.yarnpkg.com/@graphy/content.trig.write/-/content.trig.write-4.3.4.tgz#1b838dc36aa21c761462222303ab2c8383740377"
+  integrity sha512-mRQF/B/KZV1b1isw+UOJUm7auzwnfqUt7U670mNjTpa5fdfnqVWtMIEPMkD2o+Wis87UKejjUojNPAFfFBZ85g==
   dependencies:
-    "@graphy/core.class.writable" "^4.3.3"
-    "@graphy/core.data.factory" "^4.3.3"
+    "@graphy/core.class.writable" "^4.3.4"
+    "@graphy/core.data.factory" "^4.3.4"
     big-integer "^1.6.48"
 
 "@graphy/content.ttl.write@^4.3.3":
-  version "4.3.3"
-  resolved "https://registry.yarnpkg.com/@graphy/content.ttl.write/-/content.ttl.write-4.3.3.tgz#8e1074a7a0fc60c9271a0b5bba60f7258db2f90b"
-  integrity sha512-UTY1kz1vhw4ugcgOk1XptqGgHjFH8yDSACfMNBZadE9sUrYvloeiY4QcCrHX1CZXf2/p9kHwEd0pB/7orbVYAQ==
+  version "4.3.4"
+  resolved "https://registry.yarnpkg.com/@graphy/content.ttl.write/-/content.ttl.write-4.3.4.tgz#58335abec9afddb81d034298b65981477efe3352"
+  integrity sha512-riXl3z7xP6cVG9rnBtpDckmMFikVQr3kcmfTMR3mB+LTR3JAMO5BGS5NOHu5kWW4wKTCvS6rJRD5N+WrxeDxtg==
   dependencies:
-    "@graphy/core.class.writable" "^4.3.3"
-    "@graphy/core.data.factory" "^4.3.3"
+    "@graphy/core.class.writable" "^4.3.4"
+    "@graphy/core.data.factory" "^4.3.4"
     big-integer "^1.6.48"
 
 "@graphy/content.xml.scribe@^4.3.3":
-  version "4.3.3"
-  resolved "https://registry.yarnpkg.com/@graphy/content.xml.scribe/-/content.xml.scribe-4.3.3.tgz#ce506a361349fcac20d1b36040e6362ac511c064"
-  integrity sha512-13bIViH4Ce31J/4qXJvizuN7gfo9hFgH/eE8ZR8rtX4IikbcniaXjx9W5L9K1pdBA494xk7rHCPldmT5/gUQ9Q==
+  version "4.3.4"
+  resolved "https://registry.yarnpkg.com/@graphy/content.xml.scribe/-/content.xml.scribe-4.3.4.tgz#dc836f9bbdf8c5f2740319cd9a0538f639be1bdb"
+  integrity sha512-SkcQB5lBzFs73KupxiLgpsdtblU7W8AtalWEVeHEXq7RaQSi/ogE3d/6kTXYbMghdDHr2aGRpuHA+epivbfY5w==
   dependencies:
-    "@graphy/core.class.writable" "^4.3.3"
-    "@graphy/core.data.factory" "^4.3.3"
+    "@graphy/core.class.writable" "^4.3.4"
+    "@graphy/core.data.factory" "^4.3.4"
 
-"@graphy/core.class.scribable@^4.3.3":
-  version "4.3.3"
-  resolved "https://registry.yarnpkg.com/@graphy/core.class.scribable/-/core.class.scribable-4.3.3.tgz#37d186faa68490c6e89bc8308b8bc96ec56ce563"
-  integrity sha512-TcwHMvNmD807+FPx7OWcJ1FLcrFeXQa0DbBffShVOwzTvaFpAA2wS+tVFTRc3P/koU4BVhHvyIt8QixwbZjUMg==
+"@graphy/core.class.scribable@^4.3.4":
+  version "4.3.4"
+  resolved "https://registry.yarnpkg.com/@graphy/core.class.scribable/-/core.class.scribable-4.3.4.tgz#28c15d35c343537f4ea16ce401e258f1a3c8a16a"
+  integrity sha512-miZ/rYApkl6jLIxRUWlh0KxDaV2GQVzY9Ejn1zJ71FxYfRfkQRf6ToV7aKQfySlkehFfBrVnzHe9WgZqNQz6Mg==
   dependencies:
-    "@graphy/core.data.factory" "^4.3.3"
-    "@graphy/core.iso.stream" "^4.3.3"
+    "@graphy/core.data.factory" "^4.3.4"
+    "@graphy/core.iso.stream" "^4.3.4"
 
-"@graphy/core.class.writable@^4.3.3":
-  version "4.3.3"
-  resolved "https://registry.yarnpkg.com/@graphy/core.class.writable/-/core.class.writable-4.3.3.tgz#0a7b870b7c54da52322ceaa0d5cbb57198dc8004"
-  integrity sha512-Sc+r3ROJBhT10F9NK91Sakzd7VGPUJGcAjxl64AQkwtFQ1GTRu0UgnbSx3zgj80u75s89w1cqPzHmJxC/s1BRA==
+"@graphy/core.class.writable@^4.3.4":
+  version "4.3.4"
+  resolved "https://registry.yarnpkg.com/@graphy/core.class.writable/-/core.class.writable-4.3.4.tgz#e632384a0b263cdc67c1b6b82ae5839ef4692e19"
+  integrity sha512-B1dhE/Kg/jVgXUW7scgKVfNJC5IHs7tT81DZRs7Vt6zdqwM4bi3fgEfUb2dTe40PetUY7gu5qR2sXXn06UtoQw==
   dependencies:
-    "@graphy/core.class.scribable" "^4.3.3"
-    "@graphy/core.data.factory" "^4.3.3"
+    "@graphy/core.class.scribable" "^4.3.4"
+    "@graphy/core.data.factory" "^4.3.4"
 
-"@graphy/core.data.factory@^4.3.3":
-  version "4.3.3"
-  resolved "https://registry.yarnpkg.com/@graphy/core.data.factory/-/core.data.factory-4.3.3.tgz#432f1938817cf135916574b59b27f194dc2a1bd1"
-  integrity sha512-qEODuBEk8+QvoPPs1FWXUNOOQr2mEZbZBJyAXv3ZIOi4PZ4uxmcKaqB0S4vxFEsfaNXMallMwREokhtfkxixdA==
+"@graphy/core.data.factory@^4.3.3", "@graphy/core.data.factory@^4.3.4":
+  version "4.3.4"
+  resolved "https://registry.yarnpkg.com/@graphy/core.data.factory/-/core.data.factory-4.3.4.tgz#738998f1785e79b245dcb02afafc1c281926100e"
+  integrity sha512-IH/WkKG6kqfqNGgHIAseYXHkQTvWvjQsuDrfy+1IvOhFzJC8hRhqcBlse7ik4Cc7lzoWZWd6alQU3RA89D7nmw==
   dependencies:
     uri-js "^4.4.0"
 
-"@graphy/core.iso.stream@^4.3.3":
-  version "4.3.3"
-  resolved "https://registry.yarnpkg.com/@graphy/core.iso.stream/-/core.iso.stream-4.3.3.tgz#4a655a3db874d3eccd17ec553f577d73be2dc30e"
-  integrity sha512-XFbJDpgariyXzk14HAm7ce4sqLYxZ3ck8vSYJfrfQoZLVJ64K0o7+dNMOqKs6ukf2MfcRrEYhUB7pxbXhpl/PQ==
+"@graphy/core.iso.stream@^4.3.4":
+  version "4.3.4"
+  resolved "https://registry.yarnpkg.com/@graphy/core.iso.stream/-/core.iso.stream-4.3.4.tgz#f275c123d075ee9cc3a71526553e89658caaafc9"
+  integrity sha512-b66gmPVFC1a6RflI423Joq2gZ1BlIBfr2CiKChSzqlAYgzFWqQSKcI6ECP7gctZdezNc3h54t1+FljxPef3Ufg==
   dependencies:
     readable-stream "^3.6.0"
 
