@@ -12,7 +12,9 @@ export const playground = createModel({
     },
     setShaperoneParam(state, { key, value }) {
       const url = new URL(state.shaperone);
-      url.searchParams.set(key, value);
+      const params = new URLSearchParams(url.hash.substr(1));
+      params.set(key, value);
+      url.hash = params.toString();
 
       return {
         ...state,
@@ -21,7 +23,9 @@ export const playground = createModel({
     },
     setSharingParam(state, { key, value }) {
       const url = new URL(state.sharingLink);
-      url.searchParams.set(key, value);
+      const params = new URLSearchParams(url.hash.substr(1));
+      params.set(key, value);
+      url.hash = params.toString();
 
       return {
         ...state,
@@ -95,18 +99,19 @@ export const playground = createModel({
       },
       restoreState() {
         const url = new URL(document.location.toString());
+        const hash = new URLSearchParams(url.hash.substr(1));
 
-        const page = url.searchParams.get("page");
-        const shapesGraph = url.searchParams.get("shapesGraph");
-        const shapesGraphFormat = url.searchParams.get("shapesGraphFormat");
-        const shapesGraphCustomPrefixes = url.searchParams.get(
-          "shapesGraphCustomPrefixes"
-        );
-        const dataGraph = url.searchParams.get("dataGraph");
-        const dataGraphFormat = url.searchParams.get("dataGraphFormat");
-        const dataGraphCustomPrefixes = url.searchParams.get(
-          "dataGraphCustomPrefixes"
-        );
+        function getParam(name) {
+          return hash.get(name) || url.searchParams.get(name);
+        }
+
+        const page = getParam("page");
+        const shapesGraph = getParam("shapesGraph");
+        const shapesGraphFormat = getParam("shapesGraphFormat");
+        const shapesGraphCustomPrefixes = getParam("shapesGraphCustomPrefixes");
+        const dataGraph = getParam("dataGraph");
+        const dataGraphFormat = getParam("dataGraphFormat");
+        const dataGraphCustomPrefixes = getParam("dataGraphCustomPrefixes");
 
         if (page) {
           dispatch.playground.switchPage(Number.parseInt(page, 10));
@@ -137,6 +142,7 @@ export const playground = createModel({
         [...url.searchParams.keys()].forEach(key =>
           url.searchParams.delete(key)
         );
+        url.hash = "";
         window.history.replaceState(null, "", url.toString());
       }
     };
