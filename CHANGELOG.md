@@ -1,5 +1,11 @@
 # @zazuko/shacl-playground
 
+## 1.2.0
+
+### Minor Changes
+
+- e43f703: Change sharing link to use hash URI and not query string. This prevents issues with very long URIs
+
 ## 1.1.4
 
 ### Patch Changes
