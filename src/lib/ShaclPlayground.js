@@ -384,9 +384,12 @@ export class ShaclPlayground extends connect(store, LitElement) {
 
     this.sharingLinkShortened = true;
 
-    const shortnenerUrl = new URL("https://s.zazuko.com/api/v1/shorten/");
-    shortnenerUrl.searchParams.set("url", this.sharingLink);
-    const response = await fetch(shortnenerUrl);
+    const response = await fetch("https://s.zazuko.com/api/v1/shorten/", {
+      method: "POST",
+      body: new URLSearchParams({
+        url: this.sharingLink
+      })
+    });
 
     this.sharingLink = await response.text();
   }
