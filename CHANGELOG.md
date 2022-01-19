@@ -1,5 +1,11 @@
 # @zazuko/shacl-playground
 
+## 1.2.1
+
+### Patch Changes
+
+- 97c4bbb: URL shortener failed with large graph contents
+
 ## 1.2.0
 
 ### Minor Changes
