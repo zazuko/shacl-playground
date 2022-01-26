@@ -1,5 +1,11 @@
 # @zazuko/shacl-playground
 
+## 1.2.3
+
+### Patch Changes
+
+- f76a281: Editor would sometime lose content on page reload
+
 ## 1.2.2
 
 ### Patch Changes
