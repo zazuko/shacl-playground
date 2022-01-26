@@ -1518,10 +1518,10 @@
     lit "^2"
     throttle-debounce "^3.0.1"
 
-"@rdfjs-elements/formats-pretty@^0.4", "@rdfjs-elements/formats-pretty@^0.4.0":
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/@rdfjs-elements/formats-pretty/-/formats-pretty-0.4.0.tgz#4024c65cadac6a4f254f6914eca1a674f731d45d"
-  integrity sha512-auhmN4LV3wg/KxB8NMxO35UoLBvQpcAvEEDghHCkc8RoplKs+ayPZr4/umsoDgQhSlrCnlBjUOsoawWINI5cRw==
+"@rdfjs-elements/formats-pretty@^0.4.0", "@rdfjs-elements/formats-pretty@^0.4.3":
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/@rdfjs-elements/formats-pretty/-/formats-pretty-0.4.3.tgz#bf784740b44a64f27e61ce5aac27c1c6b1c568fb"
+  integrity sha512-zSvobUHMqSpdbYKhPCknDxsPgGf9TNMpikqNQp9ka1MpRprATenFVaBX6gLrd8wWGcHcTvTAjJ1BnsbK0wAtnQ==
   dependencies:
     "@graphy/content.nq.read" "^4.3.3"
     "@graphy/content.trig.read" "^4.3.3"
@@ -1536,10 +1536,10 @@
     "@tpluscode/rdf-ns-builders" "^1.0.0"
     readable-stream "^3.6.0"
 
-"@rdfjs-elements/rdf-editor@^0.5.0", "@rdfjs-elements/rdf-editor@^0.5.1":
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/@rdfjs-elements/rdf-editor/-/rdf-editor-0.5.1.tgz#7557b47718a1f1ed9154938d0d2c692ad2a81147"
-  integrity sha512-5nCM38ZNg1Xwq6PWvVwq/TV0j3yBLEhbniMNNwOs5AjW34eDYBvfrV60bp7DFhGwsgLr5lrStm9OOz/CynoPOA==
+"@rdfjs-elements/rdf-editor@^0.5.0", "@rdfjs-elements/rdf-editor@^0.5.2":
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/@rdfjs-elements/rdf-editor/-/rdf-editor-0.5.2.tgz#2d0bf4127d6864cd25856a74cf7d230dafaf8ea4"
+  integrity sha512-14gVzn2Zy3ysawCRIgF/2IJ3FlAfO2hJJXrCIU0lqRcJTDBCcsgVBZ1hkf/vpob6WlRZMFzeyZJJ1TMBC4t1Uw==
   dependencies:
     "@rdf-esm/data-model" "^0.5.4"
     "@rdfjs-elements/editor-base" "^0.4.0"
