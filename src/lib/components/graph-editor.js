@@ -85,7 +85,7 @@ class GraphEditor extends connect(store, LitElement) {
   __quadsChanged(e) {
     store.dispatch[this.model].parsed({
       quads: e.detail.value,
-      serialized: e.target.codeMirror.value
+      serialized: e.target.value
     });
   }
 
