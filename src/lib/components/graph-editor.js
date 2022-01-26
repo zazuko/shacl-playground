@@ -24,8 +24,21 @@ function autoRefresh() {
 class GraphEditor extends connect(store, LitElement) {
   static get styles() {
     return css`
+      :host {
+        display: flex;
+        flex-direction: column;
+        overflow: scroll;
+      }
+
+      slot[name="header"]::slotted(*) {
+        position: sticky;
+        position: -webkit-sticky;
+        top: 0;
+        z-index: 100;
+      }
+
       rdf-editor {
-        height: 100%;
+        flex: 1;
       }
     `;
   }

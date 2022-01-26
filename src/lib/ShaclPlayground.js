@@ -95,8 +95,10 @@ export class ShaclPlayground extends connect(store, LitElement) {
         display: none;
       }
 
-      graph-editor {
-        overflow: hidden;
+      graph-editor h2 {
+        background: white;
+        line-height: 70px;
+        margin: 0;
       }
     `;
   }
