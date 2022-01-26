@@ -7,8 +7,17 @@ export const store = persist(
   }),
   {
     persist(state) {
-      const { validation, ...toPersist } = state;
-      return toPersist;
+      const {
+        dataGraph: { quads: dQuads, ...dataGraph },
+        shapesGraph: { quads: sQuads, ...shapesGraph },
+        validation,
+        ...toPersist
+      } = state;
+      return {
+        shapesGraph,
+        dataGraph,
+        ...toPersist
+      };
     }
   }
 );
