@@ -46,7 +46,7 @@ class ValidationReport extends connect(store, LitElement) {
         return html`
           <rdf-snippet
             .input="${raw}"
-            input-format="application/n-triples"
+            input-format="text/turtle"
             layout="vertical"
             prefixes="${this.prefixes}"
             only-output
