@@ -1,5 +1,14 @@
 # @zazuko/shacl-playground
 
+## 1.2.2
+
+### Patch Changes
+
+- 5313fb0: Some contents of RDF editor were hidden under the report panel
+- a50bc90: Relative shape ids would break raw validation report
+- b954f81: Updates @rdfjs-elements/formats-pretty
+- a98f388: `this.report.dataset is not iterable` and `quad.predicate.equals is not a function` were shown in console on page reload
+
 ## 1.2.1
 
 ### Patch Changes
