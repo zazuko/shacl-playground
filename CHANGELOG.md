@@ -1,5 +1,11 @@
 # @zazuko/shacl-playground
 
+## 1.2.4
+
+### Patch Changes
+
+- b3bfa6b: chore: upgrade rdf-validate-shacl
+
 ## 1.2.3
 
 ### Patch Changes
