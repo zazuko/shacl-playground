@@ -1,5 +1,11 @@
 # @zazuko/shacl-playground
 
+## 1.2.5
+
+### Patch Changes
+
+- af6966f: Node targeted with `sh:targetNode` would not run validation (fixes #32)
+
 ## 1.2.4
 
 ### Patch Changes
