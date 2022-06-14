@@ -1,5 +1,11 @@
 # @zazuko/shacl-playground
 
+## 1.2.6
+
+### Patch Changes
+
+- 74b768d: Improve RDF Lists when swithing formats
+
 ## 1.2.5
 
 ### Patch Changes
