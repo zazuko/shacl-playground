@@ -20,7 +20,8 @@ jobs:
       - uses: nelonoel/branch-name@v1.0.1
 
       - name: Publish preview
-        uses: jsmrcaga/action-netlify-deploy@v1.7.1
+        id: netlify
+        uses: jsmrcaga/action-netlify-deploy@v2.0.0
         if: env.NETLIFY_AUTH_TOKEN
         with:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
@@ -31,7 +32,6 @@ jobs:
           NETLIFY_DEPLOY_TO_PROD: false
           install_command: ''
           build_command: ''
-          node_version: 18
 
       - name: Status check
         uses: Sibz/github-status-action@v1.1.1
@@ -40,4 +40,4 @@ jobs:
           authToken: ${{ secrets.GITHUB_TOKEN }}
           context: Netlify Site
           state: success
-          target_url: https://${{ env.BRANCH_NAME }}--shacl-playground.netlify.app
+          target_url: ${{ steps.netlify.outputs.NETLIFY_PREVIEW_URL }}
