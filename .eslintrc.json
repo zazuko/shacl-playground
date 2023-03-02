@@ -1,5 +1,6 @@
 {
   "extends": [
+    "@tpluscode/eslint-config/js",
     "@open-wc/eslint-config",
     "eslint-config-prettier"
   ],

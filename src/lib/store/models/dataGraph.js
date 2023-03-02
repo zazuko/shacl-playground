@@ -1,5 +1,5 @@
 import { createModel } from "@captaincodeman/rdx";
-// eslint-disable-next-line import/no-unresolved
+// eslint-disable-next-line import/no-unresolved,require-extensions/require-extensions
 import data from "../../graphs/data.jsonld?raw";
 import * as graphReducers from "./graphReducers.js";
 
@@ -8,9 +8,9 @@ export const dataGraph = createModel({
     format: "application/ld+json",
     graph: data,
     prefixes: [],
-    customPrefixes: {}
+    customPrefixes: {},
   },
   reducers: {
-    ...graphReducers
-  }
+    ...graphReducers,
+  },
 });
