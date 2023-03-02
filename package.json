@@ -40,7 +40,7 @@
     "@zazuko/rdf-vocabularies": "^2021.3.31",
     "clownface": "^1.2.0",
     "lit": "^2",
-    "rdf-validate-shacl": "^0.4.4",
+    "rdf-validate-shacl": "^0.4.5",
     "zero-md": "^2.1.1"
   },
   "devDependencies": {
