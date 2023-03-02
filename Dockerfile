@@ -4,17 +4,16 @@ WORKDIR /build
 
 # Install dependencies
 COPY package.json yarn.lock ./
+COPY packages/app/package.json ./packages/app/
 RUN yarn --frozen-lockfile
 
 # Copy remaining required files and create production build
-COPY src ./src/
-COPY vite.config.ts ./
-COPY index.html ./
+COPY packages ./packages/
 COPY CHANGELOG.md ./
 COPY LICENSE ./
 COPY README.md ./
-RUN yarn run build
+RUN yarn --cwd packages/app run build
 
 # Copy production build into an nginx image
 FROM docker.io/library/nginx:1.21-alpine
-COPY --from=builder /build/dist /usr/share/nginx/html
+COPY --from=builder /build/packages/app/dist /usr/share/nginx/html

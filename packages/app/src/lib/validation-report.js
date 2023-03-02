@@ -10,7 +10,7 @@ class ValidationReport extends connect(store, LitElement) {
       conforms: { type: Boolean },
       results: { type: Array },
       displayAs: { type: String },
-      prefixes: { type: String }
+      prefixes: { type: String },
     };
   }
 
@@ -54,9 +54,7 @@ class ValidationReport extends connect(store, LitElement) {
         `;
       }
       default:
-        return html`
-          Unsupported visualization ${this.displayAs}
-        `;
+        return html` Unsupported visualization ${this.displayAs} `;
     }
   }
 
@@ -69,8 +67,8 @@ class ValidationReport extends connect(store, LitElement) {
       prefixes: [
         "sh",
         ...state.shapesGraph.prefixes,
-        ...state.dataGraph.prefixes
-      ].join(",")
+        ...state.dataGraph.prefixes,
+      ].join(","),
     };
   }
 }

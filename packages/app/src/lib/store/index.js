@@ -3,7 +3,7 @@ import * as models from "./models.js";
 
 export const store = persist(
   createStore({
-    models
+    models,
   }),
   {
     persist(state) {
@@ -16,8 +16,8 @@ export const store = persist(
       return {
         shapesGraph,
         dataGraph,
-        ...toPersist
+        ...toPersist,
       };
-    }
+    },
   }
 );

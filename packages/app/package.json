@@ -1,0 +1,53 @@
+{
+  "name": "@zazuko/shacl-playground",
+  "version": "1.2.6",
+  "main": "index.js",
+  "author": "Zazuko GmbH",
+  "type": "module",
+  "license": "AGPL",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@captaincodeman/rdx": "^1.0.0-rc.9",
+    "@polymer/iron-icon": "^3.0.1",
+    "@polymer/iron-media-query": "^3.0.1",
+    "@polymer/iron-pages": "^3.0.1",
+    "@rdf-esm/term-map": "^0.5.0",
+    "@rdfine/shacl": "^0.8.4",
+    "@rdfjs-elements/formats-pretty": "^0.5.0",
+    "@rdfjs-elements/rdf-editor": "^0.5.3",
+    "@rdfjs-elements/rdf-snippet": "^0.4.1",
+    "@rdfjs/dataset": "^2",
+    "@tpluscode/rdf-ns-builders": "^1",
+    "@tpluscode/rdf-string": "^0.2.24",
+    "@vaadin/vaadin-app-layout": "^21",
+    "@vaadin/vaadin-button": "^21",
+    "@vaadin/vaadin-dialog": "^21",
+    "@vaadin/vaadin-form-layout": "^21",
+    "@vaadin/vaadin-icons": "^21",
+    "@vaadin/vaadin-item": "^21",
+    "@vaadin/vaadin-list-box": "^21",
+    "@vaadin/vaadin-ordered-layout": "^21",
+    "@vaadin/vaadin-select": "^21",
+    "@vaadin/vaadin-split-layout": "21",
+    "@vaadin/vaadin-tabs": "^21",
+    "@vaadin/vaadin-text-field": "^21",
+    "@zazuko/rdf-vocabularies": "^2021.3.31",
+    "clownface": "^1.2.0",
+    "lit": "^2",
+    "rdf-validate-shacl": "^0.4.5",
+    "zero-md": "^2.1.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.0",
+    "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
+    "browserify-zlib": "^0.2.0",
+    "process": "^0.11.10",
+    "rollup-plugin-node-polyfills": "^0.2.1",
+    "util": "^0.12.5",
+    "vite": "^4.1.1",
+    "vite-plugin-static-copy": "^0.13.1"
+  }
+}
