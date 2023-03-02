@@ -9,7 +9,6 @@ RUN yarn --frozen-lockfile
 
 # Copy remaining required files and create production build
 COPY packages ./packages/
-COPY CHANGELOG.md ./
 COPY LICENSE ./
 COPY README.md ./
 RUN yarn --cwd packages/app run build
