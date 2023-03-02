@@ -7,7 +7,9 @@
   "scripts": {
     "prepare": "husky install",
     "lint": "eslint --quiet . --ignore-path .eslintignore --ignore-path .gitignore",
-    "analyze": "lit-analyzer --strict --quiet"
+    "analyze": "lit-analyzer --strict --quiet",
+    "release": "changeset publish",
+    "test": "mocha --recursive packages/**/test/*.test.mjs"
   },
   "devDependencies": {
     "@changesets/cli": "^2.23.0",
@@ -24,6 +26,7 @@
     "husky": "^6.0.0",
     "lint-staged": "^10.0.0",
     "lit-analyzer": "^2.0.0-pre.2",
+    "mocha": "^10.2.0",
     "standard": "^17.0.0"
   },
   "workspaces": [

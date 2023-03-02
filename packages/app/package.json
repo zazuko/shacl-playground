@@ -1,9 +1,10 @@
 {
-  "name": "@zazuko/shacl-playground",
+  "name": "shacl-playground",
   "version": "1.2.6",
   "main": "index.js",
   "author": "Zazuko GmbH",
   "type": "module",
+  "private": true,
   "license": "AGPL",
   "scripts": {
     "start": "vite",
