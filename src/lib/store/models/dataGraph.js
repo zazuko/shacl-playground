@@ -1,5 +1,6 @@
 import { createModel } from "@captaincodeman/rdx";
-import data from "../../graphs/data.jsonld";
+// eslint-disable-next-line import/no-unresolved
+import data from "../../graphs/data.jsonld?raw";
 import * as graphReducers from "./graphReducers.js";
 
 export const dataGraph = createModel({

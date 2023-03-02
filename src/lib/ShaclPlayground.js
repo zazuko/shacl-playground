@@ -2,6 +2,7 @@ import { css, html, LitElement, render } from "lit";
 import { connect } from "@captaincodeman/rdx";
 import "@vaadin/vaadin-app-layout/vaadin-app-layout.js";
 import "@vaadin/vaadin-tabs/vaadin-tabs.js";
+import "@vaadin/vaadin-button/vaadin-button.js";
 import "@vaadin/vaadin-tabs/vaadin-tab.js";
 import "@polymer/iron-pages/iron-pages.js";
 import "@polymer/iron-media-query/iron-media-query.js";
@@ -124,7 +125,6 @@ export class ShaclPlayground extends connect(store, LitElement) {
   connectedCallback() {
     super.connectedCallback();
     import("@vaadin/vaadin-app-layout/vaadin-drawer-toggle.js");
-    import("@vaadin/vaadin-button/vaadin-button.js");
     import("@polymer/iron-icon/iron-icon.js");
     import("@vaadin/vaadin-dialog/vaadin-dialog.js");
     import("@vaadin/vaadin-icons/vaadin-icons.js");
@@ -284,9 +284,9 @@ export class ShaclPlayground extends connect(store, LitElement) {
 
   __renderAbout() {
     return html`
-      <zero-md src="./README.md"> </zero-md>
+      <zero-md src="/README.md"> </zero-md>
       <h2>Changelog</h2>
-      <zero-md src="./CHANGELOG.md">
+      <zero-md src="/CHANGELOG.md">
         <template>
           <style>
             h1 {

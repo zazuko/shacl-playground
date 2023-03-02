@@ -3,14 +3,15 @@
   "version": "1.2.6",
   "main": "index.js",
   "author": "Zazuko GmbH",
+  "type": "module",
   "license": "AGPL",
   "private": true,
   "scripts": {
     "prepare": "husky install",
     "lint": "eslint --quiet . --ignore-path .eslintignore --ignore-path .gitignore",
     "analyze": "lit-analyzer --strict --quiet",
-    "start": "webpack-dev-server --mode development",
-    "build": "webpack --mode production"
+    "start": "vite",
+    "build": "vite build"
   },
   "dependencies": {
     "@captaincodeman/rdx": "^1.0.0-rc.9",
@@ -44,23 +45,21 @@
     "zero-md": "^2.1.1"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.11.0",
     "@changesets/cli": "^2.23.0",
-    "@open-wc/building-webpack": "^2.13.46",
+    "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
     "@open-wc/eslint-config": "^7.0.0",
-    "copy-webpack-plugin": "^6.4.1",
-    "deepmerge": "^3.2.0",
-    "es-dev-commonjs-transformer": "^0.2.0",
+    "browserify-zlib": "^0.2.0",
     "eslint": "^7.24.0",
     "eslint-config-prettier": "^8.2.0",
     "husky": "^6.0.0",
     "lint-staged": "^10.0.0",
     "lit-analyzer": "^1.2.1",
-    "raw-loader": "^4.0.2",
-    "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.3",
-    "webpack-merge": "^5.1.1"
+    "process": "^0.11.10",
+    "rollup-plugin-node-polyfills": "^0.2.1",
+    "stream-browserify": "^3.0.0",
+    "util": "^0.12.5",
+    "vite": "^4.1.1",
+    "vite-plugin-static-copy": "^0.13.1"
   },
   "lint-staged": {
     "*.js": [
