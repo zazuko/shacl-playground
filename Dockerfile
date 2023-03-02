@@ -8,7 +8,8 @@ RUN yarn --frozen-lockfile
 
 # Copy remaining required files and create production build
 COPY src ./src/
-COPY webpack.config.js ./
+COPY vite.config.ts ./
+COPY index.html ./
 COPY CHANGELOG.md ./
 COPY LICENSE ./
 COPY README.md ./
