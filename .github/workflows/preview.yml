@@ -29,6 +29,7 @@ jobs:
           build_directory: dist
           deploy_alias: ${{ env.BRANCH_NAME }}
           NETLIFY_DEPLOY_TO_PROD: false
+          build_command: yarn --cwd packages/app run build
 
       - name: Status check
         uses: Sibz/github-status-action@v1.1.1
