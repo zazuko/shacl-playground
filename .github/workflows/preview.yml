@@ -15,7 +15,6 @@ jobs:
 
       - run: yarn install --frozen-lockfile
       - run: yarn changeset version
-      - run: yarn build
 
       - uses: nelonoel/branch-name@v1.0.1
 
@@ -30,8 +29,6 @@ jobs:
           build_directory: dist
           deploy_alias: ${{ env.BRANCH_NAME }}
           NETLIFY_DEPLOY_TO_PROD: false
-          install_command: ''
-          build_command: ''
 
       - name: Status check
         uses: Sibz/github-status-action@v1.1.1
