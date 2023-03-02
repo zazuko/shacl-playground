@@ -5,6 +5,8 @@ on: push
 jobs:
   Deploy:
     runs-on: ubuntu-latest
+    env:
+      NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2.1.2
@@ -13,11 +15,13 @@ jobs:
 
       - run: yarn install --frozen-lockfile
       - run: yarn changeset version
+      - run: yarn build
 
       - uses: nelonoel/branch-name@v1.0.1
 
       - name: Publish preview
         uses: jsmrcaga/action-netlify-deploy@v1.7.1
+        if: env.NETLIFY_AUTH_TOKEN
         with:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
@@ -25,11 +29,13 @@ jobs:
           build_directory: dist
           deploy_alias: ${{ env.BRANCH_NAME }}
           NETLIFY_DEPLOY_TO_PROD: false
-          build_command: yarn build
+          install_command: ''
+          build_command: ''
           node_version: 14
 
       - name: Status check
         uses: Sibz/github-status-action@v1.1.1
+        if: env.NETLIFY_AUTH_TOKEN
         with:
           authToken: ${{ secrets.GITHUB_TOKEN }}
           context: Netlify Site
