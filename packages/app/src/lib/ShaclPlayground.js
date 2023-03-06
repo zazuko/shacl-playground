@@ -2,6 +2,7 @@ import { css, html, LitElement, render } from "lit";
 import { connect } from "@captaincodeman/rdx";
 import "@vaadin/vaadin-app-layout/vaadin-app-layout.js";
 import "@vaadin/vaadin-tabs/vaadin-tabs.js";
+import "@vaadin/vaadin-button/vaadin-button.js";
 import "@vaadin/vaadin-tabs/vaadin-tab.js";
 import "@polymer/iron-pages/iron-pages.js";
 import "@polymer/iron-media-query/iron-media-query.js";
@@ -13,12 +14,12 @@ const TAB = {
   SHAPES: 0,
   DATA: 1,
   REPORT: 2,
-  ABOUT: 3
+  ABOUT: 3,
 };
 const LABEL = {
   DataGraph: "Data Graph",
   ShapesGraph: "Shapes Graph",
-  Report: "Validation Report"
+  Report: "Validation Report",
 };
 
 export class ShaclPlayground extends connect(store, LitElement) {
@@ -111,7 +112,7 @@ export class ShaclPlayground extends connect(store, LitElement) {
       sharingLink: { type: String },
       sharingLinkShortened: { type: Boolean },
       sharingDialogOpen: { type: Boolean },
-      __wideDisplay: { type: Boolean, reflect: true, attribute: "wide" }
+      __wideDisplay: { type: Boolean, reflect: true, attribute: "wide" },
     };
   }
 
@@ -124,7 +125,6 @@ export class ShaclPlayground extends connect(store, LitElement) {
   connectedCallback() {
     super.connectedCallback();
     import("@vaadin/vaadin-app-layout/vaadin-drawer-toggle.js");
-    import("@vaadin/vaadin-button/vaadin-button.js");
     import("@polymer/iron-icon/iron-icon.js");
     import("@vaadin/vaadin-dialog/vaadin-dialog.js");
     import("@vaadin/vaadin-icons/vaadin-icons.js");
@@ -150,7 +150,7 @@ export class ShaclPlayground extends connect(store, LitElement) {
           slot="navbar"
           theme="centered"
           .selected="${this.page}"
-          @selected-changed="${e => this.__pageSelected(e.detail.value)}"
+          @selected-changed="${(e) => this.__pageSelected(e.detail.value)}"
         >
           <vaadin-tab theme="icon-on-top" title="${LABEL.ShapesGraph}">
             <iron-icon icon="vaadin:cluster"></iron-icon>
@@ -212,7 +212,7 @@ export class ShaclPlayground extends connect(store, LitElement) {
       <vaadin-dialog
         ?opened="${this.sharingDialogOpen}"
         .renderer="${this.__renderSharingDialog(this)}"
-        @opened-changed="${e => {
+        @opened-changed="${(e) => {
           this.sharingDialogOpen = e.detail.value;
         }}"
       >
@@ -233,18 +233,14 @@ export class ShaclPlayground extends connect(store, LitElement) {
               model="shapesGraph"
               @focus="${() => this.__pageSelected(TAB.SHAPES)}"
             >
-              <h2 slot="header">
-                ${LABEL.ShapesGraph}
-              </h2>
+              <h2 slot="header">${LABEL.ShapesGraph}</h2>
             </graph-editor>
             <graph-editor
               style="width: 50%"
               model="dataGraph"
               @focus="${() => this.__pageSelected(TAB.DATA)}"
             >
-              <h2 slot="header">
-                ${LABEL.DataGraph}
-              </h2>
+              <h2 slot="header">${LABEL.DataGraph}</h2>
             </graph-editor>
           </vaadin-split-layout>
           <validation-report
@@ -252,9 +248,7 @@ export class ShaclPlayground extends connect(store, LitElement) {
             @click="${() => this.__pageSelected(TAB.REPORT)}"
           ></validation-report>
         </vaadin-split-layout>
-        <section>
-          ${this.__renderAbout()}
-        </section>
+        <section>${this.__renderAbout()}</section>
       </iron-pages>
     `;
   }
@@ -275,18 +269,16 @@ export class ShaclPlayground extends connect(store, LitElement) {
         <section id="validation-report">
           <validation-report></validation-report>
         </section>
-        <section>
-          ${this.__renderAbout()}
-        </section>
+        <section>${this.__renderAbout()}</section>
       </iron-pages>
     `;
   }
 
   __renderAbout() {
     return html`
-      <zero-md src="./README.md"> </zero-md>
+      <zero-md src="/README.md"> </zero-md>
       <h2>Changelog</h2>
-      <zero-md src="./CHANGELOG.md">
+      <zero-md src="/CHANGELOG.md">
         <template>
           <style>
             h1 {
@@ -301,7 +293,7 @@ export class ShaclPlayground extends connect(store, LitElement) {
 
   __renderSharingDialog(parent) {
     /* eslint-disable lit/no-template-bind */
-    return root => {
+    return (root) => {
       let dialogContents;
       if (!root.firstElementChild) {
         dialogContents = document.createElement("div");
@@ -348,7 +340,7 @@ export class ShaclPlayground extends connect(store, LitElement) {
       page: state.playground.page,
       shaperoneLink: state.playground.shaperone,
       sharingLink: state.playground.sharingLink,
-      sharingLinkShortened: false
+      sharingLinkShortened: false,
     };
   }
 
@@ -389,8 +381,8 @@ export class ShaclPlayground extends connect(store, LitElement) {
     const response = await fetch("https://s.zazuko.com/api/v1/shorten/", {
       method: "POST",
       body: new URLSearchParams({
-        url: this.sharingLink
-      })
+        url: this.sharingLink,
+      }),
     });
 
     this.sharingLink = await response.text();

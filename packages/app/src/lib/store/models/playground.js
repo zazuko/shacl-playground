@@ -4,7 +4,7 @@ export const playground = createModel({
   state: {
     page: 3,
     shaperone: new URL("https://forms.hypermedia.app/playground/").toString(),
-    sharingLink: new URL(window.location.href).toString()
+    sharingLink: new URL(window.location.href).toString(),
   },
   reducers: {
     switchPage(state, page) {
@@ -18,7 +18,7 @@ export const playground = createModel({
 
       return {
         ...state,
-        shaperone: url.toString()
+        shaperone: url.toString(),
       };
     },
     setSharingParam(state, { key, value }) {
@@ -29,9 +29,9 @@ export const playground = createModel({
 
       return {
         ...state,
-        sharingLink: url.toString()
+        sharingLink: url.toString(),
       };
-    }
+    },
   },
   effects(store) {
     const dispatch = store.getDispatch();
@@ -40,61 +40,61 @@ export const playground = createModel({
       switchPage(value) {
         dispatch.playground.setSharingParam({
           key: "page",
-          value
+          value,
         });
       },
-      "dataGraph/parsed": function({ serialized }) {
+      "dataGraph/parsed": function ({ serialized }) {
         const { format } = store.getState().dataGraph;
 
         dispatch.playground.setShaperoneParam({
           key: "resource",
-          value: serialized
+          value: serialized,
         });
         dispatch.playground.setShaperoneParam({
           key: "resourceFormat",
-          value: format
+          value: format,
         });
 
         dispatch.playground.setSharingParam({
           key: "dataGraph",
-          value: serialized
+          value: serialized,
         });
         dispatch.playground.setSharingParam({
           key: "dataGraphFormat",
-          value: format
+          value: format,
         });
       },
-      "shapesGraph/parsed": function({ serialized }) {
+      "shapesGraph/parsed": function ({ serialized }) {
         const { format } = store.getState().shapesGraph;
 
         dispatch.playground.setShaperoneParam({
           key: "shapes",
-          value: serialized
+          value: serialized,
         });
         dispatch.playground.setShaperoneParam({
           key: "shapesFormat",
-          value: format
+          value: format,
         });
 
         dispatch.playground.setSharingParam({
           key: "shapesGraph",
-          value: serialized
+          value: serialized,
         });
         dispatch.playground.setSharingParam({
           key: "shapesGraphFormat",
-          value: format
+          value: format,
         });
       },
-      "dataGraph/setCustomPrefix": function() {
+      "dataGraph/setCustomPrefix": function () {
         dispatch.playground.setSharingParam({
           key: "dataGraphCustomPrefixes",
-          value: JSON.stringify(store.getState().dataGraph.customPrefixes)
+          value: JSON.stringify(store.getState().dataGraph.customPrefixes),
         });
       },
-      "shapesGraph/setCustomPrefix": function() {
+      "shapesGraph/setCustomPrefix": function () {
         dispatch.playground.setSharingParam({
           key: "shapesGraphCustomPrefixes",
-          value: JSON.stringify(store.getState().shapesGraph.customPrefixes)
+          value: JSON.stringify(store.getState().shapesGraph.customPrefixes),
         });
       },
       restoreState() {
@@ -139,12 +139,12 @@ export const playground = createModel({
           );
         }
 
-        [...url.searchParams.keys()].forEach(key =>
+        [...url.searchParams.keys()].forEach((key) =>
           url.searchParams.delete(key)
         );
         url.hash = "";
         window.history.replaceState(null, "", url.toString());
-      }
+      },
     };
-  }
+  },
 });

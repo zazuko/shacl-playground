@@ -51,7 +51,7 @@ class PrefixList extends LitElement {
 
   static get properties() {
     return {
-      selected: { type: Array }
+      selected: { type: Array },
     };
   }
 
@@ -67,7 +67,7 @@ class PrefixList extends LitElement {
       <label slot="label">Prefixes</label>
         <div id="list">
           ${sorted.map(
-            prefix => html`
+            (prefix) => html`
               <vaadin-item
                 value="${prefix}"
                 ?selected="${this.selected.includes(prefix)}"
@@ -95,16 +95,16 @@ class PrefixList extends LitElement {
   }
 
   __toggle(prefix) {
-    return e => {
+    return (e) => {
       const event = e.target.selected ? "prefix-unselected" : "prefix-selected";
 
       this.dispatchEvent(
         new CustomEvent(event, {
           detail: {
-            value: prefix
+            value: prefix,
           },
           bubbles: true,
-          composed: true
+          composed: true,
         })
       );
     };

@@ -1,0 +1,21 @@
+name: Test
+
+on: push
+
+jobs:
+  Mocha:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: yarn install --frozen-lockfile
+      - run: yarn test
+
+  Build-Image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: docker-practice/actions-setup-docker@1.0.11
+      - run: docker build -f Dockerfile -t shacl-playground .

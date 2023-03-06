@@ -8,13 +8,13 @@ import { store } from "../store/index.js";
 
 const displayModes = Object.entries({
   tree: "Focus node tree",
-  raw: "Raw RDF"
+  raw: "Raw RDF",
 });
 
 class ValidationDrawer extends connect(store, LitElement) {
   static get properties() {
     return {
-      display: { type: String }
+      display: { type: String },
     };
   }
 
@@ -42,7 +42,7 @@ class ValidationDrawer extends connect(store, LitElement) {
 
   mapState(state) {
     return {
-      display: state.validation.display || "tree"
+      display: state.validation.display || "tree",
     };
   }
 

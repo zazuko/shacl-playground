@@ -16,10 +16,7 @@ function createMessage(result) {
   return "Unspecified error";
 }
 
-const renderResult = result =>
-  html`
-    <li>${createMessage(result)}</li>
-  `;
+const renderResult = (result) => html` <li>${createMessage(result)}</li> `;
 
 function renderSummary({ focusNodes, ...top }) {
   return html`
@@ -53,7 +50,7 @@ function reduceToFocusNodes({ focusNodes, errors }, result) {
   if (result.focusNode) {
     const focusNodeErrors = focusNodes.get(result.focusNode) || {
       properties: new TermMap(),
-      errors: []
+      errors: [],
     };
     if (result.resultPath) {
       const pathErrors = focusNodeErrors.properties.get(result.resultPath.id);
@@ -77,7 +74,7 @@ function reduceToFocusNodes({ focusNodes, errors }, result) {
 class ErrorSummary extends LitElement {
   static get properties() {
     return {
-      validationResults: { type: Array }
+      validationResults: { type: Array },
     };
   }
 
@@ -88,13 +85,13 @@ class ErrorSummary extends LitElement {
 
   render() {
     const results = this.validationResults
-      .map(result => fromPointer(result))
-      .filter(result => result.resultSeverity.equals(sh.Violation));
+      .map((result) => fromPointer(result))
+      .filter((result) => result.resultSeverity.equals(sh.Violation));
 
     if (results.length) {
       const summary = results.reduce(reduceToFocusNodes, {
         focusNodes: new TermMap(),
-        errors: []
+        errors: [],
       });
       return renderSummary(summary);
     }

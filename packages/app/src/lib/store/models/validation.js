@@ -5,7 +5,7 @@ export const validation = createModel({
   state: {
     display: "tree",
     conforms: undefined,
-    results: []
+    results: [],
   },
   reducers: {
     report(state, report) {
@@ -15,12 +15,12 @@ export const validation = createModel({
         ...state,
         results,
         conforms: report.conforms,
-        report
+        report,
       };
     },
     display(state, display) {
       return { ...state, display };
-    }
+    },
   },
   effects(store) {
     const dispatch = store.getDispatch();
@@ -41,7 +41,7 @@ export const validation = createModel({
 
     return {
       "dataGraph/parsed": validate,
-      "shapesGraph/parsed": validate
+      "shapesGraph/parsed": validate,
     };
-  }
+  },
 });
