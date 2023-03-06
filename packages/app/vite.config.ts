@@ -23,6 +23,7 @@ export default defineConfig({
         }),
       ],
     },
+    include: ['@zazuko/shacl-playground'],
   },
   build: {
     rollupOptions: {

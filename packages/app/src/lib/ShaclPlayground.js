@@ -8,6 +8,7 @@ import "@polymer/iron-pages/iron-pages.js";
 import "@polymer/iron-media-query/iron-media-query.js";
 import "@vaadin/vaadin-ordered-layout/vaadin-vertical-layout.js";
 import "@vaadin/vaadin-split-layout/vaadin-split-layout.js";
+import { shorten } from "@zazuko/s";
 import { store } from "./store/index.js";
 
 const TAB = {
@@ -378,14 +379,7 @@ export class ShaclPlayground extends connect(store, LitElement) {
 
     this.sharingLinkShortened = true;
 
-    const response = await fetch("https://s.zazuko.com/api/v1/shorten/", {
-      method: "POST",
-      body: new URLSearchParams({
-        url: this.sharingLink,
-      }),
-    });
-
-    this.sharingLink = await response.text();
+    this.sharingLink = await shorten(this.sharingLink);
   }
 
   __setWideDisplay(e) {
