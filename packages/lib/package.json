@@ -11,5 +11,8 @@
     "@rdfjs/types": "^1.1.0",
     "@tpluscode/rdf-ns-builders": "^2.0.1",
     "rdf-ext": "^2"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
