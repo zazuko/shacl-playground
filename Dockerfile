@@ -5,6 +5,7 @@ WORKDIR /build
 # Install dependencies
 COPY package.json yarn.lock ./
 COPY packages/app/package.json ./packages/app/
+COPY packages/lib/package.json ./packages/lib/
 RUN yarn --frozen-lockfile
 
 # Copy remaining required files and create production build

@@ -23,8 +23,12 @@ export default defineConfig({
         }),
       ],
     },
+    include: ['@zazuko/shacl-playground'],
   },
   build: {
+    commonjsOptions: {
+      include: [/packages\/lib/, /node_modules/]
+    },
     rollupOptions: {
       plugins: [
         rollupNodePolyFill(),

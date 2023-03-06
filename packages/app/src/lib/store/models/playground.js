@@ -1,10 +1,17 @@
 import { createModel } from "@captaincodeman/rdx";
+import * as playgroundLib from "@zazuko/shacl-playground";
+
+const initialUrl = new URL(window.location.href);
+const sharingParams = Object.fromEntries([
+  ...new URLSearchParams(initialUrl.hash.substr(1)).entries(),
+]);
 
 export const playground = createModel({
   state: {
     page: 3,
     shaperone: new URL("https://forms.hypermedia.app/playground/").toString(),
-    sharingLink: new URL(window.location.href).toString(),
+    sharingLink: initialUrl.toString(),
+    sharingParams,
   },
   reducers: {
     switchPage(state, page) {
@@ -22,14 +29,25 @@ export const playground = createModel({
       };
     },
     setSharingParam(state, { key, value }) {
-      const url = new URL(state.sharingLink);
-      const params = new URLSearchParams(url.hash.substr(1));
-      params.set(key, value);
-      url.hash = params.toString();
+      const { shapesGraph, dataGraph, ...options } = state.sharingParams || {};
+      const sharingLink = playgroundLib.createPlaygroundUrl(
+        shapesGraph,
+        dataGraph,
+        {
+          ...options,
+          instanceUrl: window.location.href,
+        }
+      );
 
       return {
         ...state,
-        sharingLink: url.toString(),
+        sharingParams: {
+          shapesGraph,
+          dataGraph,
+          ...options,
+          [key]: value,
+        },
+        sharingLink,
       };
     },
   },
@@ -88,13 +106,13 @@ export const playground = createModel({
       "dataGraph/setCustomPrefix": function () {
         dispatch.playground.setSharingParam({
           key: "dataGraphCustomPrefixes",
-          value: JSON.stringify(store.getState().dataGraph.customPrefixes),
+          value: store.getState().dataGraph.customPrefixes,
         });
       },
       "shapesGraph/setCustomPrefix": function () {
         dispatch.playground.setSharingParam({
           key: "shapesGraphCustomPrefixes",
-          value: JSON.stringify(store.getState().shapesGraph.customPrefixes),
+          value: store.getState().shapesGraph.customPrefixes,
         });
       },
       restoreState() {
