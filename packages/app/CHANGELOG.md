@@ -1,5 +1,16 @@
 # shacl-playground.zazuko.com
 
+## 1.2.7
+
+### Patch Changes
+
+- 16e5f20: Update `rdf-validate-shacl`
+- 59cdad2: chore(deps): bump express from 4.17.1 to 4.18.2
+- d67cbb1: Eat our own dogfood (use `@zazuko/shacl-playground` package)
+- Updated dependencies [144a011]
+- Updated dependencies [d67cbb1]
+  - @zazuko/shacl-playground@1.0.0
+
 ## 1.2.6
 
 ### Patch Changes
