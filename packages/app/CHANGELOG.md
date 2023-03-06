@@ -1,4 +1,4 @@
-# @zazuko/shacl-playground
+# shacl-playground.zazuko.com
 
 ## 1.2.6
 

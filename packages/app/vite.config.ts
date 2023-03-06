@@ -35,11 +35,11 @@ export default defineConfig({
     viteStaticCopy({
       targets: [
         {
-          src: 'README.md',
+          src: '../../README.md',
           dest: '.'
         },
         {
-          src: 'CHANGELOG.md',
+          src: '../../CHANGELOG.md',
           dest: '.'
         }
       ]

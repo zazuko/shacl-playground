@@ -4,6 +4,9 @@
     "@open-wc/eslint-config",
     "eslint-config-prettier"
   ],
+  "env": {
+    "mocha": true
+  },
   "rules": {
     "class-methods-use-this": "warn"
   }

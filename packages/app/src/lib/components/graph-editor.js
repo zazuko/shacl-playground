@@ -9,7 +9,7 @@ const PARSE_DELAY = 10;
 
 function autoRefresh() {
   if (!autorefreshLoaded) {
-    autorefreshLoaded = new Promise(resolve => {
+    autorefreshLoaded = new Promise((resolve) => {
       const script = document.createElement("script");
       script.src =
         "https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.32.0/addon/display/autorefresh.min.js";
@@ -49,7 +49,7 @@ class GraphEditor extends connect(store, LitElement) {
       graph: { type: String },
       model: { type: String },
       prefixes: { type: Array },
-      customPrefixes: { type: Object }
+      customPrefixes: { type: Object },
     };
   }
 
@@ -72,8 +72,8 @@ class GraphEditor extends connect(store, LitElement) {
         .prefixes="${this.prefixes.join(",")}"
         .customPrefixes="${this.customPrefixes}"
         @quads-changed="${this.__quadsChanged}"
-        @focus="${e => this.__forwardEvent(e)}"
-        @blur="${e => this.__forwardEvent(e)}"
+        @focus="${(e) => this.__forwardEvent(e)}"
+        @blur="${(e) => this.__forwardEvent(e)}"
       ></rdf-editor>
     `;
   }
@@ -85,7 +85,7 @@ class GraphEditor extends connect(store, LitElement) {
   __quadsChanged(e) {
     store.dispatch[this.model].parsed({
       quads: e.detail.value,
-      serialized: e.target.value
+      serialized: e.target.value,
     });
   }
 
@@ -94,7 +94,7 @@ class GraphEditor extends connect(store, LitElement) {
       format: state[this.model].format,
       prefixes: state[this.model].prefixes,
       customPrefixes: state[this.model].customPrefixes || {},
-      graph: state[this.model].graph
+      graph: state[this.model].graph,
     };
   }
 }

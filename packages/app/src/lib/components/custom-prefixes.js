@@ -5,7 +5,7 @@ import "@vaadin/vaadin-button/vaadin-button.js";
 export class CustomPrefixes extends LitElement {
   static get properties() {
     return {
-      prefixes: { type: Object }
+      prefixes: { type: Object },
     };
   }
 
@@ -84,10 +84,10 @@ export class CustomPrefixes extends LitElement {
       new CustomEvent("custom-prefix-set", {
         detail: {
           prefix: prefix.value,
-          namespace: namespace.value
+          namespace: namespace.value,
         },
         bubbles: true,
-        composed: true
+        composed: true,
       })
     );
 

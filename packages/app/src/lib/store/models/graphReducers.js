@@ -6,28 +6,28 @@ export function parsed(state, { quads, serialized }) {
   return {
     ...state,
     quads,
-    graph: serialized
+    graph: serialized,
   };
 }
 
 export function setGraph(state, graph) {
   return {
     ...state,
-    graph
+    graph,
   };
 }
 
 export function addPrefix(state, prefix) {
   return {
     ...state,
-    prefixes: [...new Set([...state.prefixes, prefix])]
+    prefixes: [...new Set([...state.prefixes, prefix])],
   };
 }
 
 export function removePrefix(state, prefix) {
   return {
     ...state,
-    prefixes: state.prefixes.filter(p => p !== prefix)
+    prefixes: state.prefixes.filter((p) => p !== prefix),
   };
 }
 
@@ -46,13 +46,13 @@ export function setCustomPrefix(state, { prefix, namespace }) {
 
   return {
     ...state,
-    customPrefixes
+    customPrefixes,
   };
 }
 
 export function replaceCustomPrefixes(state, prefixes) {
   return {
     ...state,
-    customPrefixes: prefixes
+    customPrefixes: prefixes,
   };
 }

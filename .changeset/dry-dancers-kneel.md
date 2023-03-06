@@ -1,5 +1,5 @@
 ---
-"@zazuko/shacl-playground": patch
+"shacl-playground": patch
 ---
 
 Update `rdf-validate-shacl`

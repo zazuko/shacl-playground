@@ -13,7 +13,7 @@ class EditorDrawer extends connect(store, LitElement) {
       format: { type: String },
       model: { type: String },
       prefixes: { type: Array },
-      customPrefixes: { type: Object }
+      customPrefixes: { type: Object },
     };
   }
 
@@ -45,7 +45,7 @@ class EditorDrawer extends connect(store, LitElement) {
       html`
         <vaadin-list-box>
           ${Object.values(formats).map(
-            format => html`
+            (format) => html`
               <vaadin-item value="${format}">${format}</vaadin-item>
             `
           )}
@@ -59,18 +59,18 @@ class EditorDrawer extends connect(store, LitElement) {
     return {
       format: state[this.model].format,
       prefixes: state[this.model].prefixes,
-      customPrefixes: state[this.model].customPrefixes || {}
+      customPrefixes: state[this.model].customPrefixes || {},
     };
   }
 
   mapEvents() {
     return {
-      "prefix-selected": e =>
+      "prefix-selected": (e) =>
         store.dispatch[this.model].addPrefix(e.detail.value),
-      "prefix-unselected": e =>
+      "prefix-unselected": (e) =>
         store.dispatch[this.model].removePrefix(e.detail.value),
-      "custom-prefix-set": e =>
-        store.dispatch[this.model].setCustomPrefix(e.detail)
+      "custom-prefix-set": (e) =>
+        store.dispatch[this.model].setCustomPrefix(e.detail),
     };
   }
 
