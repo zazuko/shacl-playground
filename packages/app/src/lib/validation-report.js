@@ -38,7 +38,7 @@ class ValidationReport extends connect(store, LitElement) {
     switch (this.displayAs) {
       case "tree":
         return html`
-          <error-summary .validationResults="${this.results}"></error-summary>
+          <error-summary .validationResults="${this.results}" .customPrefixes="${this.customPrefixes}"></error-summary>
         `;
       case "raw": {
         import("@rdfjs-elements/rdf-snippet");
@@ -69,6 +69,7 @@ class ValidationReport extends connect(store, LitElement) {
         ...state.shapesGraph.prefixes,
         ...state.dataGraph.prefixes,
       ].join(","),
+      customPrefixes: { ...state.shapesGraph.customPrefixes, ...state.dataGraph.customPrefixes }
     };
   }
 }

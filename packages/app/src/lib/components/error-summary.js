@@ -18,7 +18,7 @@ function createMessage(result) {
 
 const renderResult = (result) => html` <li>${createMessage(result)}</li> `;
 
-function renderSummary({ focusNodes, ...top }) {
+function renderSummary({ focusNodes, ...top }, customPrefixes) {
   return html`
     <ul>
       ${top.errors.map(renderResult)}
@@ -31,7 +31,7 @@ function renderSummary({ focusNodes, ...top }) {
               ${[...properties].map(
                 ([property, messages]) => html`
                   <li>
-                    ${shrink(property.value)}:
+                    ${shrink(property.value, customPrefixes) == "" ? property.value : shrink(property.value, customPrefixes)}:
                     <ul>
                       ${messages.map(renderResult)}
                     </ul>
@@ -75,12 +75,14 @@ class ErrorSummary extends LitElement {
   static get properties() {
     return {
       validationResults: { type: Array },
+      customPrefixes: { type: Object },
     };
   }
 
   constructor() {
     super();
     this.validationResults = [];
+    this.customPrefixes = {};
   }
 
   render() {
@@ -93,7 +95,7 @@ class ErrorSummary extends LitElement {
         focusNodes: new TermMap(),
         errors: [],
       });
-      return renderSummary(summary);
+      return renderSummary(summary, this.customPrefixes);
     }
 
     return "";

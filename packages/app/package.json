@@ -35,7 +35,7 @@
     "@vaadin/vaadin-split-layout": "21",
     "@vaadin/vaadin-tabs": "^21",
     "@vaadin/vaadin-text-field": "^21",
-    "@zazuko/rdf-vocabularies": "^2021.3.31",
+    "@zazuko/rdf-vocabularies": "^2023.1.19",
     "@zazuko/s": "^1.0.0",
     "@zazuko/shacl-playground": "^1.0.0",
     "clownface": "^1.2.0",
