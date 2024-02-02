@@ -1,5 +1,19 @@
 # shacl-playground.zazuko.com
 
+## 1.3.0
+
+### Minor Changes
+
+- 7f27129: - Fixes empty `<li>` node in validation report if URI of `sh:resultPath` isn't using one of the base URIs.
+  - Also applies prefixed names to Focus Nodes in report summary
+
+### Patch Changes
+
+- ddbd368: Update dependencies to use `@rdfjs/environment` stack
+- Updated dependencies [ddbd368]
+- Updated dependencies [ddbd368]
+  - @zazuko/shacl-playground@2.0.0
+
 ## 1.2.7
 
 ### Patch Changes
