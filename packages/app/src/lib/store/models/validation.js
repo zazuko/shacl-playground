@@ -1,5 +1,5 @@
 import { createModel } from "@captaincodeman/rdx";
-import clownface from "clownface";
+import rdf from "../../env.js";
 
 export const validation = createModel({
   state: {
@@ -9,7 +9,7 @@ export const validation = createModel({
   },
   reducers: {
     report(state, report) {
-      const results = report.results.map(clownface);
+      const results = report.results.map(rdf.clownface);
 
       return {
         ...state,
@@ -30,11 +30,10 @@ export const validation = createModel({
 
       if (shapesGraph.quads && dataGraph.quads) {
         const Validator = (await import("rdf-validate-shacl")).default;
-        const { dataset } = (await import("@rdfjs/dataset")).default;
 
-        const validator = new Validator(dataset(shapesGraph.quads));
+        const validator = new Validator(rdf.dataset(shapesGraph.quads));
         dispatch.validation.report(
-          validator.validate(dataset(dataGraph.quads))
+          validator.validate(rdf.dataset(dataGraph.quads))
         );
       }
     }

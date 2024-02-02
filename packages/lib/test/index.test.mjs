@@ -1,7 +1,8 @@
-import $rdf from 'rdf-ext'
+import $rdf from '@zazuko/env'
 import * as assert from 'assert';
 import playground from '../index.js';
-import {rdf, schema, sh} from '@tpluscode/rdf-ns-builders';
+
+const { rdf, schema, sh } = $rdf.ns
 
 describe('@zazuko/shacl-playground', () => {
   describe('createPlaygroundUrl', () => {

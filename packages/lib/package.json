@@ -5,12 +5,10 @@
   "main": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@tpluscode/rdf-string": "^0.2.27"
+    "@tpluscode/rdf-string": "^1.1.3"
   },
   "devDependencies": {
-    "@rdfjs/types": "^1.1.0",
-    "@tpluscode/rdf-ns-builders": "^2.0.1",
-    "rdf-ext": "^2"
+    "@zazuko/env": "^2.0.3"
   },
   "publishConfig": {
     "access": "public"
