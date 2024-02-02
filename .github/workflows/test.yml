@@ -17,5 +17,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: docker-practice/actions-setup-docker@1.0.11
+      - uses: docker-practice/actions-setup-docker@1
       - run: docker build -f Dockerfile -t shacl-playground .
