@@ -4,6 +4,7 @@
   "description": "Small library to create shareable links to the Zazuko Playground",
   "main": "index.js",
   "types": "index.d.ts",
+  "type": "module",
   "dependencies": {
     "@tpluscode/rdf-string": "^1.1.3"
   },

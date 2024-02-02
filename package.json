@@ -9,7 +9,7 @@
     "lint": "eslint --quiet . --ignore-path .eslintignore --ignore-path .gitignore",
     "analyze": "lit-analyzer --strict --quiet",
     "release": "changeset publish",
-    "test": "mocha --recursive packages/**/test/*.test.mjs"
+    "test": "mocha --recursive packages/*/test/*.test.js"
   },
   "devDependencies": {
     "@changesets/cli": "^2.23.0",
