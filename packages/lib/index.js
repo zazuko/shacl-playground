@@ -1,6 +1,6 @@
-const { turtle } = require("@tpluscode/rdf-string");
+import { turtle } from "@tpluscode/rdf-string";
 
-function createPlaygroundUrl(
+export function createPlaygroundUrl(
   shapesGraph,
   dataGraph,
   {
@@ -35,7 +35,3 @@ function createPlaygroundUrl(
   url.hash = hash.toString();
   return url.toString();
 }
-
-module.exports = {
-  createPlaygroundUrl,
-};

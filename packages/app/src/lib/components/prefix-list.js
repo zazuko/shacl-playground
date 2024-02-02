@@ -1,5 +1,5 @@
 import { css, html, LitElement } from "lit";
-import prefixes from "@zazuko/rdf-vocabularies/prefixes";
+import prefixes from "@zazuko/prefixes";
 import "@vaadin/vaadin-form-layout/vaadin-form-item.js";
 import "@vaadin/vaadin-list-box/vaadin-list-box.js";
 import "@vaadin/vaadin-item/vaadin-item.js";

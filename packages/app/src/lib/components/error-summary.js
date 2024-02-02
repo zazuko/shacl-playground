@@ -1,8 +1,6 @@
 import { html, LitElement } from "lit";
-import { shrink } from "@zazuko/rdf-vocabularies/shrink";
-import TermMap from "@rdf-esm/term-map";
-import { fromPointer } from "@rdfine/shacl/lib/ValidationResult";
-import { sh } from "@tpluscode/rdf-ns-builders";
+import { shrink } from "@zazuko/prefixes/shrink";
+import rdf from "../env.js";
 
 function createMessage(result) {
   if (result.resultMessage) {
@@ -49,7 +47,7 @@ function renderSummary({ focusNodes, ...top }, customPrefixes) {
 function reduceToFocusNodes({ focusNodes, errors }, result) {
   if (result.focusNode) {
     const focusNodeErrors = focusNodes.get(result.focusNode) || {
-      properties: new TermMap(),
+      properties: rdf.termMap(),
       errors: [],
     };
     if (result.resultPath) {
@@ -87,12 +85,12 @@ class ErrorSummary extends LitElement {
 
   render() {
     const results = this.validationResults
-      .map((result) => fromPointer(result))
-      .filter((result) => result.resultSeverity.equals(sh.Violation));
+      .map((result) => rdf.rdfine.sh.ValidationResult(result))
+      .filter((result) => result.resultSeverity.equals(rdf.ns.sh.Violation));
 
     if (results.length) {
       const summary = results.reduce(reduceToFocusNodes, {
-        focusNodes: new TermMap(),
+        focusNodes: rdf.termMap(),
         errors: [],
       });
       return renderSummary(summary, this.customPrefixes);

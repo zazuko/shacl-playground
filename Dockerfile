@@ -3,10 +3,10 @@ FROM docker.io/library/node:16-alpine AS builder
 WORKDIR /build
 
 # Install dependencies
-COPY package.json yarn.lock ./
+COPY package.json package-lock.json ./
 COPY packages/app/package.json ./packages/app/
 COPY packages/lib/package.json ./packages/lib/
-RUN yarn --frozen-lockfile
+RUN npm ci
 
 # Copy remaining required files and create production build
 COPY packages ./packages/
