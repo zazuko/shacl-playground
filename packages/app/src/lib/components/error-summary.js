@@ -25,13 +25,13 @@ function renderSummary({ focusNodes, ...top }, customPrefixes) {
       ${[...focusNodes].map(
         ([focusNode, { properties, errors }]) => html`
           <li>
-            ${focusNode.value}:
+            ${shrink(focusNode.value, customPrefixes) || focusNode.value}:
             <ul>
               ${errors.map(renderResult)}
               ${[...properties].map(
                 ([property, messages]) => html`
                   <li>
-                    ${shrink(property.value, customPrefixes) == "" ? property.value : shrink(property.value, customPrefixes)}:
+                    ${shrink(property.value, customPrefixes) || property.value}:
                     <ul>
                       ${messages.map(renderResult)}
                     </ul>
