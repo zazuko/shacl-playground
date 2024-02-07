@@ -17,8 +17,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@master
-      - run: yarn install --frozen-lockfile
-      - run: yarn build
+      - run: npm ci
+      - run: npm run build
       - run: "echo 'shacl-playground.zazuko.com' > dist/CNAME"
       - name: GitHub Pages
         uses: crazy-max/ghaction-github-pages@v4.0.0

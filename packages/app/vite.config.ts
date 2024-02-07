@@ -43,7 +43,7 @@ export default defineConfig({
           dest: '.'
         },
         {
-          src: '../../CHANGELOG.md',
+          src: './CHANGELOG.md',
           dest: '.'
         }
       ]
