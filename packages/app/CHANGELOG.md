@@ -1,5 +1,11 @@
 # shacl-playground.zazuko.com
 
+## 1.3.2
+
+### Patch Changes
+
+- 3bcae92: Update `@vaadin` components
+
 ## 1.3.1
 
 ### Patch Changes
