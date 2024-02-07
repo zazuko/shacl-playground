@@ -11,13 +11,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@master
+        uses: actions/checkout@v4
         with:
           # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
           fetch-depth: 0
 
       - name: Setup Node.js
-        uses: actions/setup-node@master
+        uses: actions/setup-node@v4
 
       - name: Install Dependencies
         run: npm ci
@@ -45,8 +45,8 @@ jobs:
           private_key: ${{ secrets.GH_PRIVATE_KEY }}
 
       - name: Tag Release
-        uses: tpluscode/action-autotag@min-version-21
+        uses: butlerlogic/action-autotag@v1.1.2
         with:
-          tag_prefix: v
+          tag_prefix: @zazuko/shacl-playground@
         env:
           GITHUB_TOKEN: ${{ steps.generate_token.outputs.token }}
