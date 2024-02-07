@@ -8,7 +8,7 @@
     "prepare": "husky",
     "lint": "eslint --quiet . --ignore-path .eslintignore --ignore-path .gitignore",
     "analyze": "lit-analyzer --strict --quiet",
-    "release": "changeset publish",
+    "release": "changeset publish && changeset tag",
     "test": "mocha --recursive packages/*/test/*.test.js"
   },
   "devDependencies": {
