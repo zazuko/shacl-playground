@@ -10,6 +10,10 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: ./packages/app
+
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@master
@@ -19,7 +23,7 @@ jobs:
       - name: GitHub Pages
         uses: crazy-max/ghaction-github-pages@v2.1.1
         with:
-          build_dir: dist
+          build_dir: ./packages/app/dist
           jekyll: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
