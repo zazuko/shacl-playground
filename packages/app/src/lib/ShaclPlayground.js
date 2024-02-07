@@ -54,6 +54,11 @@ export class ShaclPlayground extends connect(store, LitElement) {
 
       vaadin-tab:last-child {
         margin-left: auto;
+        margin-right: 0;
+      }
+
+      vaadin-tab:first-child {
+        margin-left: 0;
       }
 
       :host(:not([wide])) vaadin-tab:first-child {
