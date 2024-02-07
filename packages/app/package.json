@@ -24,7 +24,7 @@
     "@vaadin/vaadin-app-layout": "^21",
     "@vaadin/vaadin-button": "^21",
     "@vaadin/vaadin-dialog": "^21",
-    "@vaadin/vaadin-form-layout": "^21",
+    "@vaadin/vaadin-form-layout": "^23",
     "@vaadin/vaadin-icons": "^21",
     "@vaadin/vaadin-item": "^21",
     "@vaadin/vaadin-list-box": "^21",
