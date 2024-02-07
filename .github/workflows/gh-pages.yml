@@ -2,7 +2,8 @@ name: GitHub Pages
 
 on:
   push:
-    tags: ["*"]
+    tags:
+      - "**"
 
 jobs:
   publish:
