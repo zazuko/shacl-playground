@@ -32,7 +32,7 @@
     "@vaadin/vaadin-select": "^21",
     "@vaadin/vaadin-split-layout": "21",
     "@vaadin/vaadin-tabs": "^21",
-    "@vaadin/vaadin-text-field": "^21",
+    "@vaadin/vaadin-text-field": "^23",
     "@zazuko/env": "^2",
     "@zazuko/prefixes": "^2.1.1",
     "@zazuko/s": "^1.0.0",
