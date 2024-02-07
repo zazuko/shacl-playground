@@ -27,7 +27,7 @@
     "@vaadin/vaadin-form-layout": "^21",
     "@vaadin/vaadin-icons": "^21",
     "@vaadin/vaadin-item": "^21",
-    "@vaadin/vaadin-list-box": "^21",
+    "@vaadin/vaadin-list-box": "^23",
     "@vaadin/vaadin-ordered-layout": "^21",
     "@vaadin/vaadin-select": "^21",
     "@vaadin/vaadin-split-layout": "21",
