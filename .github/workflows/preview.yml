@@ -33,7 +33,7 @@ jobs:
           monorepo_package: packages/app
 
       - name: Status check
-        uses: Sibz/github-status-action@v1.1.1
+        uses: Sibz/github-status-action@v1.1.6
         if: env.NETLIFY_AUTH_TOKEN
         with:
           authToken: ${{ secrets.GITHUB_TOKEN }}
