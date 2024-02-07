@@ -5,7 +5,7 @@
   "license": "AGPL",
   "private": true,
   "scripts": {
-    "prepare": "husky install",
+    "prepare": "husky",
     "lint": "eslint --quiet . --ignore-path .eslintignore --ignore-path .gitignore",
     "analyze": "lit-analyzer --strict --quiet",
     "release": "changeset publish",
@@ -16,8 +16,8 @@
     "@open-wc/eslint-config": "^9.2.2",
     "@tpluscode/eslint-config": "^0.4.5",
     "eslint-config-prettier": "^9.1.0",
-    "husky": "^6.0.0",
-    "lint-staged": "^10.0.0",
+    "husky": "^9.0.10",
+    "lint-staged": "^15.2.2",
     "lit-analyzer": "^2.0.0-pre.2",
     "mocha": "^10.2.0"
   },
