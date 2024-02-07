@@ -10,10 +10,6 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: ./packages/app
-
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -21,7 +17,9 @@ jobs:
           node-version: "20"
       - run: npm ci
       - run: npm run build
+        working-directory: ./packages/app
       - run: "echo 'shacl-playground.zazuko.com' > dist/CNAME"
+        working-directory: ./packages/app
       - name: GitHub Pages
         uses: crazy-max/ghaction-github-pages@v4.0.0
         with:
