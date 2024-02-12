@@ -34,7 +34,7 @@
     "@vaadin/vaadin-tabs": "^23",
     "@vaadin/vaadin-text-field": "^23",
     "@zazuko/env": "^2",
-    "@zazuko/prefixes": "^2.1.1",
+    "@zazuko/prefixes": "^2.2.0",
     "@zazuko/s": "^1.0.0",
     "@zazuko/shacl-playground": "^2.0.0",
     "lit": "^2",
