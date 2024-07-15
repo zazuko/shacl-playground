@@ -42,7 +42,7 @@
     "zero-md": "^2.1.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.21.0",
+    "@babel/core": "^7.24.9",
     "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
     "browserify-zlib": "^0.2.0",
     "process": "^0.11.10",
