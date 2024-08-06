@@ -1,5 +1,11 @@
 # shacl-playground.zazuko.com
 
+## 1.3.3
+
+### Patch Changes
+
+- eac5ed0: build(deps): updated rdf-validate-shacl
+
 ## 1.3.2
 
 ### Patch Changes
