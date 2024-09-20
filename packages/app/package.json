@@ -15,7 +15,7 @@
     "@polymer/iron-icon": "^3.0.1",
     "@polymer/iron-media-query": "^3.0.1",
     "@polymer/iron-pages": "^3.0.1",
-    "@rdfine/env": "^1.1.0",
+    "@rdfine/env": "^1.1.2",
     "@rdfine/shacl": "^0.10.5",
     "@rdfjs-elements/formats-pretty": "^0.6.7",
     "@rdfjs-elements/rdf-editor": "^0.5.7",
