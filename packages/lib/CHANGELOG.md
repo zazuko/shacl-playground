@@ -1,5 +1,15 @@
 # @zazuko/shacl-playground
 
+## 3.0.0
+
+### Major Changes
+
+- e62b5cb: Adds the option to serialize using an RDF/JS environment. Had to make the function async
+
+### Patch Changes
+
+- b705f3a: chore(deps): bump @tpluscode/rdf-string from 1.1.3 to 1.3.3
+
 ## 2.0.0
 
 ### Major Changes
