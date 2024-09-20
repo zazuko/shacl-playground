@@ -1,5 +1,15 @@
 # shacl-playground.zazuko.com
 
+## 1.3.4
+
+### Patch Changes
+
+- ab6e8fd: chore(deps): bump @rdfine/env from 1.1.0 to 1.1.2
+- b705f3a: chore(deps): bump @tpluscode/rdf-string from 1.1.3 to 1.3.3
+- Updated dependencies [e62b5cb]
+- Updated dependencies [b705f3a]
+  - @zazuko/shacl-playground@3.0.0
+
 ## 1.3.3
 
 ### Patch Changes
