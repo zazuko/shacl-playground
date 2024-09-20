@@ -20,7 +20,7 @@
     "@rdfjs-elements/formats-pretty": "^0.6.7",
     "@rdfjs-elements/rdf-editor": "^0.5.7",
     "@rdfjs-elements/rdf-snippet": "^0.4.3",
-    "@tpluscode/rdf-string": "^1.1.3",
+    "@tpluscode/rdf-string": "^1.3.3",
     "@vaadin/vaadin-app-layout": "^23.5.3",
     "@vaadin/vaadin-button": "^23.5.3",
     "@vaadin/vaadin-dialog": "^23.5.3",
