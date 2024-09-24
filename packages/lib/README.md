@@ -9,7 +9,7 @@ import { createPlaygroundUrl } from '@zazuko/shacl-playground'
 let shapes: DatasetCore
 let data: DatasetCore
 
-const link = createPlaygroundUrl(shapes, data)
+const link = await createPlaygroundUrl(shapes, data)
 ```
 
 The URLs may be quite long. Shorten with [`@zazuko/s`](https://npm.im/@zazuko/s)

@@ -28,16 +28,11 @@ export const playground = createModel({
         shaperone: url.toString(),
       };
     },
+    setSharingLink(state, sharingLink) {
+      return { ...state, sharingLink };
+    },
     setSharingParam(state, { key, value }) {
       const { shapesGraph, dataGraph, ...options } = state.sharingParams || {};
-      const sharingLink = playgroundLib.createPlaygroundUrl(
-        shapesGraph,
-        dataGraph,
-        {
-          ...options,
-          instanceUrl: window.location.href,
-        }
-      );
 
       return {
         ...state,
@@ -47,7 +42,6 @@ export const playground = createModel({
           ...options,
           [key]: value,
         },
-        sharingLink,
       };
     },
   },
@@ -60,6 +54,21 @@ export const playground = createModel({
           key: "page",
           value,
         });
+      },
+      async setSharingParam() {
+        const { shapesGraph, dataGraph, ...options } =
+          store.getState().sharingParams;
+
+        const sharingLink = await playgroundLib.createPlaygroundUrl(
+          shapesGraph,
+          dataGraph,
+          {
+            ...options,
+            instanceUrl: window.location.href,
+          }
+        );
+
+        dispatch.playground.setSharingLink(sharingLink);
       },
       "dataGraph/parsed": function ({ serialized }) {
         const { format } = store.getState().dataGraph;
