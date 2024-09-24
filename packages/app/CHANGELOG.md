@@ -1,5 +1,13 @@
 # shacl-playground.zazuko.com
 
+## 1.3.5
+
+### Patch Changes
+
+- d3f4b7f: Sharing link would display `[object Promise]` since previous release
+- Updated dependencies [d3f4b7f]
+  - @zazuko/shacl-playground@3.0.1
+
 ## 1.3.4
 
 ### Patch Changes
