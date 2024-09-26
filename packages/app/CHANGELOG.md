@@ -1,5 +1,12 @@
 # shacl-playground.zazuko.com
 
+## 1.3.6
+
+### Patch Changes
+
+- 0597ba9: chore(deps): bump @tpluscode/rdf-string from 1.3.3 to 1.3.4
+- 9db6cd4: Fixes `Cannot destructure property 'shapesGraph' of 'e.getState(...).sharingParams' as it is undefined`
+
 ## 1.3.5
 
 ### Patch Changes
