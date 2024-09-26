@@ -56,8 +56,7 @@ export const playground = createModel({
         });
       },
       async setSharingParam() {
-        const { shapesGraph, dataGraph, ...options } =
-          store.getState().sharingParams;
+        const { shapesGraph, dataGraph, ...options } = store.getState();
 
         const sharingLink = await playgroundLib.createPlaygroundUrl(
           shapesGraph,
