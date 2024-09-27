@@ -1,5 +1,11 @@
 # shacl-playground.zazuko.com
 
+## 1.3.7
+
+### Patch Changes
+
+- 26f55a6: Inadequate fix in version 1.3.6 caused `[object Object]` strings in sharing links
+
 ## 1.3.6
 
 ### Patch Changes
