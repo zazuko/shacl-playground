@@ -33,7 +33,7 @@ export const validation = createModel({
 
         const validator = new Validator(rdf.dataset(shapesGraph.quads));
         dispatch.validation.report(
-          validator.validate(rdf.dataset(dataGraph.quads))
+          await validator.validate(rdf.dataset(dataGraph.quads))
         );
       }
     }
