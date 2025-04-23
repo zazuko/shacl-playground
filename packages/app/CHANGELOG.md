@@ -1,5 +1,26 @@
 # shacl-playground.zazuko.com
 
+## 1.3.7
+
+### Patch Changes
+
+- 26f55a6: Inadequate fix in version 1.3.6 caused `[object Object]` strings in sharing links
+
+## 1.3.6
+
+### Patch Changes
+
+- 0597ba9: chore(deps): bump @tpluscode/rdf-string from 1.3.3 to 1.3.4
+- 9db6cd4: Fixes `Cannot destructure property 'shapesGraph' of 'e.getState(...).sharingParams' as it is undefined`
+
+## 1.3.5
+
+### Patch Changes
+
+- d3f4b7f: Sharing link would display `[object Promise]` since previous release
+- Updated dependencies [d3f4b7f]
+  - @zazuko/shacl-playground@3.0.1
+
 ## 1.3.4
 
 ### Patch Changes

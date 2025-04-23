@@ -1,6 +1,6 @@
 {
   "name": "@zazuko/shacl-playground",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Small library to create shareable links to the Zazuko Playground",
   "main": "index.js",
   "types": "index.d.ts",
@@ -8,7 +8,7 @@
   "dependencies": {
     "@types/rdfjs__environment": "^1.0.0",
     "@types/rdfjs__formats": "^4.0.0",
-    "@tpluscode/rdf-string": "^1.3.3"
+    "@tpluscode/rdf-string": "^1.3.4"
   },
   "devDependencies": {
     "@rdfjs-elements/formats-pretty": "^0.6.7",

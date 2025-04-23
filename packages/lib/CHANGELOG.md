@@ -1,5 +1,11 @@
 # @zazuko/shacl-playground
 
+## 3.0.1
+
+### Patch Changes
+
+- d3f4b7f: Update readme
+
 ## 3.0.0
 
 ### Major Changes

@@ -20,7 +20,7 @@ jobs:
 
       - name: Publish preview
         id: netlify
-        uses: jsmrcaga/action-netlify-deploy@v2.2.0
+        uses: jsmrcaga/action-netlify-deploy@v2.4.0
         if: env.NETLIFY_AUTH_TOKEN
         with:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
