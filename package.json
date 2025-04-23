@@ -33,5 +33,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/zazuko/shacl-playground.git"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "^4.40.0",
+    "@rollup/rollup-linux-x64-musl": "^4.40.0"
   }
 }
