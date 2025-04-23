@@ -1,5 +1,5 @@
 # Create builder image
-FROM docker.io/library/node:16-alpine AS builder
+FROM docker.io/library/node:lts-alpine AS builder
 WORKDIR /build
 
 # Install dependencies
