@@ -33,7 +33,7 @@
     "@vaadin/vaadin-split-layout": "^23.5.12",
     "@vaadin/vaadin-tabs": "^23.5.12",
     "@vaadin/vaadin-text-field": "^23.5.12",
-    "@zazuko/env": "^2.5.3",
+    "@zazuko/env": "^3.0.0",
     "@zazuko/prefixes": "^2.4.0",
     "@zazuko/s": "^1.0.1",
     "@zazuko/shacl-playground": "^3.0.1",
