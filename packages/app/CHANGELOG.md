@@ -1,5 +1,11 @@
 # shacl-playground.zazuko.com
 
+## 1.3.8
+
+### Patch Changes
+
+- b481199: Updated rdf-validate-shacl
+
 ## 1.3.7
 
 ### Patch Changes
