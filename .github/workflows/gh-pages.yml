@@ -22,7 +22,7 @@ jobs:
       - run: "echo 'shacl-playground.zazuko.com' > dist/CNAME"
         working-directory: ./packages/app
       - name: GitHub Pages
-        uses: crazy-max/ghaction-github-pages@v4.1.0
+        uses: crazy-max/ghaction-github-pages@v4.2.0
         with:
           build_dir: ./packages/app/dist
           jekyll: false
