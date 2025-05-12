@@ -15,7 +15,7 @@
     "@changesets/cli": "^2.27.10",
     "@open-wc/eslint-config": "^12.0.3",
     "@tpluscode/eslint-config": "^0.5.0",
-    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-prettier": "^10.1.5",
     "husky": "^9.1.7",
     "lint-staged": "^15.2.10",
     "lit-analyzer": "^2.0.0-pre.2",
