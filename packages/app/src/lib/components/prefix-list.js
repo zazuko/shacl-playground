@@ -1,8 +1,8 @@
 import { css, html, LitElement } from "lit";
 import prefixes from "@zazuko/prefixes";
-import "@vaadin/vaadin-form-layout/vaadin-form-item.js";
-import "@vaadin/vaadin-list-box/vaadin-list-box.js";
-import "@vaadin/vaadin-item/vaadin-item.js";
+import "@vaadin/form-layout/vaadin-form-item.js";
+import "@vaadin/list-box/vaadin-list-box.js";
+import "@vaadin/item/vaadin-item.js";
 
 class PrefixList extends LitElement {
   static get styles() {

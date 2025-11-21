@@ -1,6 +1,7 @@
 import { css, html, LitElement } from "lit";
-import "@vaadin/vaadin-text-field/vaadin-text-field.js";
-import "@vaadin/vaadin-button/vaadin-button.js";
+import "@vaadin/text-field/vaadin-text-field.js";
+import "@vaadin/button/vaadin-button.js";
+import "@vaadin/custom-field/vaadin-custom-field.js";
 
 export class CustomPrefixes extends LitElement {
   static get properties() {
@@ -34,33 +35,35 @@ export class CustomPrefixes extends LitElement {
     return html`
       <vaadin-form-item label-position="top">
         <label slot="label">Custom prefixes (click to edit)</label>
-        <dl>
-          ${prefixes.map(
-            ([prefix, namespace]) => html`
-              <dt
-                @click="${this.editPrefix(prefix, namespace)}"
-                @keyPress="${this.editPrefix(prefix, namespace)}"
-              >
-                ${prefix}
-              </dt>
-              <dd
-                dir="rtl"
-                title="${namespace}"
-                @click="${this.editPrefix(prefix, namespace)}"
-                @keyPress="${this.editPrefix(prefix, namespace)}"
-              >
-                ${namespace}&lrm;
-              </dd>
-            `
-          )}
-        </dl>
-        <vaadin-text-field id="prefix" label="Prefix"></vaadin-text-field>
-        <vaadin-text-field
-          id="ns"
-          label="Namespace"
-          placeholder="Empty to remove"
-        ></vaadin-text-field>
-        <vaadin-button @click="${this.setPrefix}">Set prefix</vaadin-button>
+        <vaadin-custom-field>
+          <dl>
+            ${prefixes.map(
+              ([prefix, namespace]) => html`
+                <dt
+                  @click="${this.editPrefix(prefix, namespace)}"
+                  @keyPress="${this.editPrefix(prefix, namespace)}"
+                >
+                  ${prefix}
+                </dt>
+                <dd
+                  dir="rtl"
+                  title="${namespace}"
+                  @click="${this.editPrefix(prefix, namespace)}"
+                  @keyPress="${this.editPrefix(prefix, namespace)}"
+                >
+                  ${namespace}&lrm;
+                </dd>
+              `
+            )}
+          </dl>
+          <vaadin-text-field id="prefix" label="Prefix"></vaadin-text-field>
+          <vaadin-text-field
+            id="ns"
+            label="Namespace"
+            placeholder="Empty to remove"
+          ></vaadin-text-field>
+          <vaadin-button @click="${this.setPrefix}">Set prefix</vaadin-button>
+        </vaadin-custom-field>
       </vaadin-form-item>
     `;
   }
