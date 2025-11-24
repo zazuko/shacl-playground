@@ -13,6 +13,11 @@ export default defineConfig({
       zlib: 'browserify-zlib',
       util: 'util',
     },
+    dedupe: [
+      '@vaadin/component-base',
+      '@vaadin/vaadin-lumo-styles',
+      '@vaadin/vaadin-themable-mixin',
+    ],
   },
   optimizeDeps: {
     esbuildOptions: {
@@ -23,7 +28,23 @@ export default defineConfig({
         }),
       ],
     },
-    include: ['@zazuko/shacl-playground'],
+    include: [
+      '@zazuko/shacl-playground',
+      '@vaadin/button',
+      '@vaadin/icon',
+      '@vaadin/icons',
+      '@vaadin/dialog',
+      '@vaadin/app-layout',
+      '@vaadin/tabs',
+      '@vaadin/vertical-layout',
+      '@vaadin/split-layout',
+      '@vaadin/form-layout',
+      '@vaadin/text-field',
+      '@vaadin/select',
+      '@vaadin/list-box',
+      '@vaadin/item',
+      '@vaadin/custom-field',
+    ],
   },
   build: {
     commonjsOptions: {

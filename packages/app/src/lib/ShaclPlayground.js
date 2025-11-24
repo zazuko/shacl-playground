@@ -1,13 +1,13 @@
 import { css, html, LitElement, render } from "lit";
 import { connect } from "@captaincodeman/rdx";
-import "@vaadin/vaadin-app-layout/vaadin-app-layout.js";
-import "@vaadin/vaadin-tabs/vaadin-tabs.js";
-import "@vaadin/vaadin-button/vaadin-button.js";
-import "@vaadin/vaadin-tabs/vaadin-tab.js";
+import "@vaadin/app-layout/vaadin-app-layout.js";
+import "@vaadin/tabs/vaadin-tabs.js";
+import "@vaadin/button/vaadin-button.js";
+import "@vaadin/tabs/vaadin-tab.js";
 import "@polymer/iron-pages/iron-pages.js";
 import "@polymer/iron-media-query/iron-media-query.js";
-import "@vaadin/vaadin-ordered-layout/vaadin-vertical-layout.js";
-import "@vaadin/vaadin-split-layout/vaadin-split-layout.js";
+import "@vaadin/vertical-layout/vaadin-vertical-layout.js";
+import "@vaadin/split-layout/vaadin-split-layout.js";
 import { shorten } from "@zazuko/s";
 import { store } from "./store/index.js";
 
@@ -130,10 +130,11 @@ export class ShaclPlayground extends connect(store, LitElement) {
 
   connectedCallback() {
     super.connectedCallback();
-    import("@vaadin/vaadin-app-layout/vaadin-drawer-toggle.js");
+    import("@vaadin/app-layout/vaadin-drawer-toggle.js");
     import("@polymer/iron-icon/iron-icon.js");
-    import("@vaadin/vaadin-dialog/vaadin-dialog.js");
-    import("@vaadin/vaadin-icons/vaadin-icons.js");
+    import("@vaadin/icon/vaadin-icon.js");
+    import("@vaadin/dialog/vaadin-dialog.js");
+    import("@vaadin/icons/vaadin-icons.js");
     import("./components/graph-editor.js");
     import("zero-md");
 
