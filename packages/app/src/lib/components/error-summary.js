@@ -3,8 +3,20 @@ import { shrink } from "@zazuko/prefixes/shrink";
 import rdf from "../env.js";
 
 function createMessage(result) {
-  if (result.resultMessage) {
-    return result.resultMessage;
+  try {
+    if (result.resultMessage) {
+      // Get all messages if multiple exist
+      const messages = Array.isArray(result.resultMessage)
+        ? result.resultMessage
+        : [result.resultMessage];
+      return messages.join('; ');
+    }
+  } catch (e) {
+    // Handle multiple resultMessage values by accessing the raw RDF data
+    const messages = result.pointer.out(rdf.ns.sh.resultMessage).values;
+    if (messages.length > 0) {
+      return messages.join('; ');
+    }
   }
 
   if (result.sourceConstraintComponent) {

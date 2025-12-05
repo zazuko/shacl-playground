@@ -1,9 +1,9 @@
 import { connect } from "@captaincodeman/rdx";
 import { html, LitElement } from "lit";
-import "@vaadin/vaadin-form-layout/vaadin-form-layout.js";
-import "@vaadin/vaadin-form-layout/vaadin-form-item.js";
-import "@vaadin/vaadin-list-box/vaadin-list-box.js";
-import "@vaadin/vaadin-item/vaadin-item.js";
+import "@vaadin/form-layout/vaadin-form-layout.js";
+import "@vaadin/form-layout/vaadin-form-item.js";
+import "@vaadin/list-box/vaadin-list-box.js";
+import "@vaadin/item/vaadin-item.js";
 import { store } from "../store/index.js";
 
 const displayModes = Object.entries({

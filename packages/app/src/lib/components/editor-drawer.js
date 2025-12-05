@@ -1,7 +1,7 @@
 import { connect } from "@captaincodeman/rdx";
 import { html, LitElement, render } from "lit";
-import "@vaadin/vaadin-form-layout/vaadin-form-layout.js";
-import "@vaadin/vaadin-select/vaadin-select.js";
+import "@vaadin/form-layout/vaadin-form-layout.js";
+import "@vaadin/select/vaadin-select.js";
 import { mediaTypes as formats } from "@rdfjs-elements/formats-pretty";
 import { store } from "../store/index.js";
 import "./prefix-list.js";
