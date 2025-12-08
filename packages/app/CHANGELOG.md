@@ -1,5 +1,11 @@
 # shacl-playground.zazuko.com
 
+## 1.3.9
+
+### Patch Changes
+
+- 7209c86: Fixed error resultMessage: Multiple terms found where 0..1 was expected (thank you @coret)
+
 ## 1.3.8
 
 ### Patch Changes
