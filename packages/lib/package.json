@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "@rdfjs-elements/formats-pretty": "^0.6.7",
-    "@zazuko/env": "^3.0.0"
+    "@zazuko/env": "^3.0.1"
   },
   "publishConfig": {
     "access": "public"
