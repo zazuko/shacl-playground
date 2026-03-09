@@ -19,7 +19,7 @@
     "husky": "^9.1.7",
     "lint-staged": "^16.2.6",
     "lit-analyzer": "^2.0.0-pre.2",
-    "mocha": "^10.7.3"
+    "mocha": "^11.7.5"
   },
   "workspaces": [
     "packages/*"
