@@ -61,7 +61,7 @@ export default defineConfig({
       targets: [
         {
           src: '../../README.md',
-          dest: '.'
+          dest: 'dist'
         },
         {
           src: './CHANGELOG.md',
