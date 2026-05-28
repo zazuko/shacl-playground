@@ -1,5 +1,11 @@
 # shacl-playground.zazuko.com
 
+## 1.3.10
+
+### Patch Changes
+
+- 5ef5e90: Multiple dependencies updated
+
 ## 1.3.9
 
 ### Patch Changes
