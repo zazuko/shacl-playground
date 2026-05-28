@@ -1,15 +1,15 @@
+import * as assert from "assert";
 import $rdf from "@zazuko/env";
 import pretty from "@rdfjs-elements/formats-pretty";
-import * as assert from "assert";
 import { createPlaygroundUrl } from "../index.js";
 
 $rdf.formats.import(pretty);
 
 const { rdf, schema, sh } = $rdf.ns;
 
-describe("@zazuko/shacl-playground", () => {
-  describe("createPlaygroundUrl", () => {
-    it("shortens datasets to turtle", async () => {
+describe("@zazuko/shacl-playground", function () {
+  describe("createPlaygroundUrl", function () {
+    it("shortens datasets to turtle", async function () {
       // given
       const shapes = $rdf
         .clownface()
@@ -30,7 +30,7 @@ describe("@zazuko/shacl-playground", () => {
       );
     });
 
-    it("uses env to serialize", async () => {
+    it("uses env to serialize", async function () {
       // given
       const shapes = $rdf
         .clownface()
