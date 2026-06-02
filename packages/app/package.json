@@ -41,7 +41,7 @@
     "@zazuko/shacl-playground": "^3.0.1",
     "lit": "^3.3.0",
     "rdf-validate-shacl": "^0.6.2",
-    "zero-md": "^2.1.1"
+    "zero-md": "^3.1.7"
   },
   "devDependencies": {
     "@babel/core": "^7.26.10",
