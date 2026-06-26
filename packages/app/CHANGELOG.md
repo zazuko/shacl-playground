@@ -1,5 +1,11 @@
 # shacl-playground.zazuko.com
 
+## 1.3.11
+
+### Patch Changes
+
+- 167f0d6: Updated `@zazuko/s` to v2
+
 ## 1.3.10
 
 ### Patch Changes
