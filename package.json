@@ -31,7 +31,8 @@
   ],
   "lint-staged": {
     "*.js": [
-      "eslint --quiet --fix"
+      "eslint --quiet --fix",
+      "prettier --write"
     ]
   },
   "repository": {
