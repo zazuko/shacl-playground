@@ -16,7 +16,7 @@
     "@eslint/compat": "^2.1.0",
     "@eslint/eslintrc": "^3.3.5",
     "@eslint/js": "^9",
-    "@open-wc/eslint-config": "^13.0.0",
+    "@open-wc/eslint-config": "^13.1.0",
     "@tpluscode/eslint-config": "^1.0.1",
     "eslint": "^9",
     "eslint-config-prettier": "^10.1.8",
