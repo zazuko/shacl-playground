@@ -128,7 +128,7 @@ export class ShaclPlayground extends connect(store, LitElement) {
     this.reportIcon = "vaadin:bug-o";
   }
 
-  connectedCallback() {
+  async connectedCallback() {
     super.connectedCallback();
     import("@vaadin/app-layout/vaadin-drawer-toggle.js");
     import("@polymer/iron-icon/iron-icon.js");
@@ -136,7 +136,9 @@ export class ShaclPlayground extends connect(store, LitElement) {
     import("@vaadin/dialog/vaadin-dialog.js");
     import("@vaadin/icons/vaadin-icons.js");
     import("./components/graph-editor.js");
-    import("zero-md"); // eslint-disable-line import/no-unresolved
+    // eslint-disable-next-line import/no-unresolved
+    const ZeroMd = await import("zero-md");
+    customElements.define("zero-md", ZeroMd.default);
 
     store.dispatch.playground.restoreState();
   }
@@ -326,7 +328,7 @@ export class ShaclPlayground extends connect(store, LitElement) {
             Shorten
           </vaadin-button>
         `,
-        dialogContents
+        dialogContents,
       );
 
       dialogContents.querySelector("vaadin-text-field")?.focus();
