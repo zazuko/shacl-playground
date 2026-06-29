@@ -11,7 +11,7 @@
     "@tpluscode/rdf-string": "^1.3.4"
   },
   "devDependencies": {
-    "@rdfjs-elements/formats-pretty": "^0.6.7",
+    "@rdfjs-elements/formats-pretty": "^0.6.9",
     "@zazuko/env": "^3.0.0"
   },
   "publishConfig": {
