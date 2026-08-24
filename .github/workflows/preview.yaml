@@ -66,7 +66,8 @@ jobs:
           DEPLOY_ALIAS: ${{ steps.alias.outputs.alias }}
           DEPLOY_MESSAGE: "Preview of ${{ github.ref_name }} (${{ github.sha }})"
         run: |
-          netlify deploy --no-build --dir packages/app/dist --alias "$DEPLOY_ALIAS" --message "$DEPLOY_MESSAGE" --json > deploy.json
+          # --filter selects the workspace package (the CLI refuses to guess in a monorepo); --dir is then resolved from the workspace root
+          netlify deploy --no-build --filter shacl-playground --dir packages/app/dist --alias "$DEPLOY_ALIAS" --message "$DEPLOY_MESSAGE" --json > deploy.json
           url=$(jq -r '.deploy_url' deploy.json)
           echo "url=$url" >> "$GITHUB_OUTPUT"
           echo "Preview deployed to <$url>" >> "$GITHUB_STEP_SUMMARY"
