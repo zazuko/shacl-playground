@@ -8,11 +8,11 @@
     "prepare": "husky",
     "lint": "eslint --quiet .",
     "analyze": "lit-analyzer --strict --quiet",
-    "release": "changeset publish && changeset tag",
+    "release": "changeset publish",
     "test": "mocha --recursive packages/*/test/*.test.js"
   },
   "devDependencies": {
-    "@changesets/cli": "^3.0.0-next.6",
+    "@changesets/cli": "^3.0.1",
     "@eslint/compat": "^2.1.0",
     "@eslint/eslintrc": "^3.3.5",
     "@eslint/js": "^9",
