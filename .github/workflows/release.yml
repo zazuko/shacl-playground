@@ -7,6 +7,10 @@ on:
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
+permissions:
+  contents: read # to check out the repo (actions/checkout); writes are done with the GitHub App token
+  id-token: write # for npm trusted publishing (OIDC), used by `changeset publish`
+
 jobs:
   release:
     name: Release
@@ -31,9 +35,9 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v7
         with:
-          node-version: 24
-          # Sets up npm authentication via NODE_AUTH_TOKEN (changesets/action@v2 no longer handles NPM_TOKEN itself)
-          registry-url: https://registry.npmjs.org/
+          node-version: "lts/*"
+          registry-url: "https://registry.npmjs.org"
+          package-manager-cache: false
 
       - name: Install Dependencies
         run: npm ci
@@ -44,5 +48,3 @@ jobs:
           # This expects you to have a script called release which does a build for your packages and calls changeset publish
           publish-script: npm run release
           github-token: ${{ steps.app-token.outputs.token }}
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
