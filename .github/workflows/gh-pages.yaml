@@ -4,8 +4,7 @@ on:
   workflow_dispatch:
   push:
     tags:
-      # Deploy on each release of the app (tags are created by Changesets)
-      - "shacl-playground@*"
+      - "**"
 
 permissions:
   contents: read
