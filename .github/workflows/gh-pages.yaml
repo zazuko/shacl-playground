@@ -6,24 +6,50 @@ on:
     tags:
       - "**"
 
-jobs:
-  publish:
-    runs-on: ubuntu-latest
+permissions:
+  contents: read
 
+# Allow only one concurrent deployment, but do not cancel in-progress runs to let production deployments complete
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
+      - name: Checkout Repo
+        uses: actions/checkout@v7
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
         with:
           node-version: "lts/*"
-      - run: npm ci
-      - run: npm run build
-        working-directory: ./packages/app
-      - run: "echo 'shacl-playground.zazuko.com' > dist/CNAME"
-        working-directory: ./packages/app
-      - name: GitHub Pages
-        uses: crazy-max/ghaction-github-pages@v5.0.0
+          package-manager-cache: false
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build --workspace packages/app
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v5
         with:
-          build_dir: ./packages/app/dist
-          jekyll: false
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          path: packages/app/dist
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write # to deploy to GitHub Pages
+      id-token: write # to verify the deployment originates from an appropriate source
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
