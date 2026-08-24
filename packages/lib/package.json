@@ -16,5 +16,10 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zazuko/shacl-playground.git",
+    "directory": "packages/lib"
   }
 }
