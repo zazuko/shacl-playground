@@ -38,7 +38,7 @@
     "@zazuko/env": "^3.0.0",
     "@zazuko/prefixes": "^2.4.0",
     "@zazuko/s": "^2",
-    "@zazuko/shacl-playground": "^4.0.0",
+    "@zazuko/shacl-playground": "^3.0.1",
     "lit": "^3.3.0",
     "rdf-validate-shacl": "^0.7.0",
     "zero-md": "^3.1.7"
