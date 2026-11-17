@@ -12,7 +12,7 @@ RUN npm ci
 COPY packages ./packages/
 COPY LICENSE ./
 COPY README.md ./
-RUN yarn --cwd packages/app run build
+RUN npm run build --workspace=shacl-playground
 
 # Copy production build into an nginx image
 FROM docker.io/library/nginx:1.21-alpine

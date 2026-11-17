@@ -136,7 +136,6 @@ export class ShaclPlayground extends connect(store, LitElement) {
     import("@vaadin/dialog/vaadin-dialog.js");
     import("@vaadin/icons/vaadin-icons.js");
     import("./components/graph-editor.js");
-    // eslint-disable-next-line import/no-unresolved
     const ZeroMd = await import("zero-md");
     customElements.define("zero-md", ZeroMd.default);
 
