@@ -1,5 +1,11 @@
 # @zazuko/shacl-playground
 
+## 4.0.0
+
+### Major Changes
+
+- 972fb3b: Updated `rdf-validate-shacl` and `rdf-validate-datatype` (may break some XSD validation which was wrong prior to this release)
+
 ## 3.0.1
 
 ### Patch Changes
