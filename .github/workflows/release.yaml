@@ -42,6 +42,11 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
+      - name: Patch Changesets tag lookup
+        run: |
+          npx --no-install patch-package --error-on-fail
+          npx --no-install mocha test/changesets-git.test.js
+
       - name: Create Release Pull Request or Publish to npm
         uses: changesets/action@v2
         with:

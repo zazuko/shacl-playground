@@ -24,6 +24,7 @@
     "lint-staged": "^17.0.5",
     "lit-analyzer": "^2.0.0-pre.2",
     "mocha": "^12",
+    "patch-package": "^8.0.1",
     "prettier": "^3.8.4"
   },
   "workspaces": [
