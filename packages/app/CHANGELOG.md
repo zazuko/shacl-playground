@@ -1,5 +1,12 @@
 # shacl-playground.zazuko.com
 
+## 1.3.12
+
+### Patch Changes
+
+- Updated dependencies [972fb3b]
+  - @zazuko/shacl-playground@4.0.0
+
 ## 1.3.11
 
 ### Patch Changes

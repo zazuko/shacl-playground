@@ -1,6 +1,6 @@
 {
   "name": "@zazuko/shacl-playground",
-  "version": "3.0.1",
+  "version": "4.0.0",
   "description": "Small library to create shareable links to the Zazuko Playground",
   "main": "index.js",
   "types": "index.d.ts",
