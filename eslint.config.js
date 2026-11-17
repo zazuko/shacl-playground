@@ -1,12 +1,11 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { defineConfig, globalIgnores } from "eslint/config";
 import globals from "globals";
-import tpluscode from "@tpluscode/eslint-config/js.js";
+import tpluscode from "@tpluscode/eslint-config/js";
 import openwc from "@open-wc/eslint-config";
 import { FlatCompat } from "@eslint/eslintrc";
-import { includeIgnoreFile } from "@eslint/compat";
+import { includeIgnoreFile } from "eslint/config";
 
 const __filename = fileURLToPath(import.meta.url);
 const compat = new FlatCompat({

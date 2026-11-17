@@ -1,5 +1,4 @@
 import { createModel } from "@captaincodeman/rdx";
-// eslint-disable-next-line import/no-unresolved,require-extensions/require-extensions
 import shapes from "../../graphs/shapes.ttl?raw";
 import * as graphReducers from "./graphReducers.js";
 

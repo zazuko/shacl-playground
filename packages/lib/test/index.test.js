@@ -1,4 +1,4 @@
-import * as assert from "assert";
+import * as assert from "node:assert";
 import $rdf from "@zazuko/env";
 import pretty from "@rdfjs-elements/formats-pretty";
 import { createPlaygroundUrl } from "../index.js";
